@@ -29,10 +29,16 @@
   session history, or personalization signal anywhere in v2 — only documents, queries, and graded
   topical-relevance judgments, matching the original repository's scope.
 - **Relevance scale:** unchanged 0–3 grade (0 irrelevant/implicit, 1 marginally relevant, 2 relevant,
-  3 highly relevant — matching the README's existing definition). Grade 3 is assigned to each query's
-  intended primary target document; a subset of queries (16/150, ≈10.7%) also carry one grade-1
-  secondary document, similar in spirit to the ~50% secondary-relevance rate in v1, chosen for
-  documents in the same cluster that are plausibly, but not primarily, relevant to that query.
+  3 highly relevant — matching the README's existing definition; grade 2 is not used anywhere in v2,
+  matching v1). Grade 3 is assigned to each query's intended primary target document; a subset of
+  queries (6/150, 4.0% — all six in the "network" cluster, e.g. "connected to vpn but can't reach
+  shared drives" also carries `kb-net-001` at grade 1) also carry one grade-1 secondary document for
+  a document in the same cluster that is plausibly, but not primarily, relevant to that query. Total
+  judged (query, document) pairs: 156 (150 primary + 6 secondary). This is a smaller secondary-
+  relevance rate than v1's roughly 50%, corrected here after a documentation/data cross-check found
+  an earlier draft of this file had overstated it as 16/150 — the underlying data and every reported
+  metric were never affected, only this description was wrong and is now fixed to match
+  `data/evaluation_queries.jsonl` exactly.
 - **Query phrasing is intentionally not uniform.** Roughly half the queries reuse some vocabulary from
   their target document's title/body; the other half are deliberate paraphrases using different
   surface words for the same underlying problem (e.g., "connected to vpn but can't reach shared
