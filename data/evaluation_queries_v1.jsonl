@@ -1,0 +1,11 @@
+{"query":"my wireless keeps disconnecting","relevance":{"kb-001":3,"kb-004":1},"category":"network"}
+{"query":"I forgot my login password","relevance":{"kb-002":3,"kb-006":1},"category":"account"}
+{"query":"why does my notebook lose charge so fast","relevance":{"kb-003":3},"category":"hardware"}
+{"query":"VPN works but intranet DNS fails","relevance":{"kb-004":3,"kb-001":1},"category":"network"}
+{"query":"documents stuck waiting to print","relevance":{"kb-005":3},"category":"hardware"}
+{"query":"authenticator token rejected","relevance":{"kb-006":3,"kb-002":1},"category":"account"}
+{"query":"undo changes to a cloud file","relevance":{"kb-007":3},"category":"storage"}
+{"query":"program closes immediately when opened","relevance":{"kb-008":3},"category":"software"}
+{"query":"people hear themselves in video call","relevance":{"kb-009":3},"category":"collaboration"}
+{"query":"outgoing mail taking hours","relevance":{"kb-010":3},"category":"messaging"}
+

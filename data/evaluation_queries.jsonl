@@ -1,11 +1,150 @@
-{"query":"my wireless keeps disconnecting","relevance":{"kb-001":3,"kb-004":1},"category":"network"}
-{"query":"I forgot my login password","relevance":{"kb-002":3,"kb-006":1},"category":"account"}
-{"query":"why does my notebook lose charge so fast","relevance":{"kb-003":3},"category":"hardware"}
-{"query":"VPN works but intranet DNS fails","relevance":{"kb-004":3,"kb-001":1},"category":"network"}
-{"query":"documents stuck waiting to print","relevance":{"kb-005":3},"category":"hardware"}
-{"query":"authenticator token rejected","relevance":{"kb-006":3,"kb-002":1},"category":"account"}
-{"query":"undo changes to a cloud file","relevance":{"kb-007":3},"category":"storage"}
-{"query":"program closes immediately when opened","relevance":{"kb-008":3},"category":"software"}
-{"query":"people hear themselves in video call","relevance":{"kb-009":3},"category":"collaboration"}
-{"query":"outgoing mail taking hours","relevance":{"kb-010":3},"category":"messaging"}
-
+{"query": "wifi disconnects on just my laptop", "relevance": {"kb-net-001": 3}, "category": "network"}
+{"query": "weak wireless signal in the back office", "relevance": {"kb-net-002": 3}, "category": "network"}
+{"query": "vpn app won't connect at all", "relevance": {"kb-net-003": 3}, "category": "network"}
+{"query": "connected to vpn but can't reach shared drives", "relevance": {"kb-net-004": 3, "kb-net-001": 1}, "category": "network"}
+{"query": "can't reach internal sites by name but IP works fine", "relevance": {"kb-net-005": 3, "kb-net-006": 1}, "category": "network"}
+{"query": "intranet portal hangs but google works fine", "relevance": {"kb-net-006": 3, "kb-net-005": 1}, "category": "network"}
+{"query": "brand new internal app gets blocked by security software", "relevance": {"kb-net-007": 3}, "category": "network"}
+{"query": "nothing loads through the office proxy", "relevance": {"kb-net-008": 3}, "category": "network"}
+{"query": "wired connection shows connected but no internet", "relevance": {"kb-net-009": 3}, "category": "network"}
+{"query": "internet feels way slower than what we pay for", "relevance": {"kb-net-010": 3, "kb-net-011": 1}, "category": "network"}
+{"query": "calls stutter but downloads are fast", "relevance": {"kb-net-011": 3, "kb-net-010": 1}, "category": "network"}
+{"query": "guest network shows up but never actually connects", "relevance": {"kb-net-012": 3}, "category": "network"}
+{"query": "vpn drops every single time I close the lid", "relevance": {"kb-net-013": 3}, "category": "network"}
+{"query": "home printer unreachable while vpn is on", "relevance": {"kb-net-014": 3, "kb-net-004": 1}, "category": "network"}
+{"query": "remote workers get routed to a dead proxy", "relevance": {"kb-net-015": 3}, "category": "network"}
+{"query": "can't remember my login password", "relevance": {"kb-acc-001": 3}, "category": "account"}
+{"query": "authenticator app codes keep getting rejected", "relevance": {"kb-acc-002": 3}, "category": "account"}
+{"query": "locked out after too many wrong password tries", "relevance": {"kb-acc-003": 3}, "category": "account"}
+{"query": "sso login just shows a blank screen", "relevance": {"kb-acc-004": 3}, "category": "account"}
+{"query": "new hire has a directory account but no access to anything", "relevance": {"kb-acc-005": 3}, "category": "account"}
+{"query": "profile photo won't change no matter what", "relevance": {"kb-acc-006": 3}, "category": "account"}
+{"query": "never got the password reset email", "relevance": {"kb-acc-007": 3}, "category": "account"}
+{"query": "system won't let me reuse an old password", "relevance": {"kb-acc-008": 3}, "category": "account"}
+{"query": "lost access to a shared inbox for no reason", "relevance": {"kb-acc-009": 3}, "category": "account"}
+{"query": "account got disabled right after my manager changed", "relevance": {"kb-acc-010": 3}, "category": "account"}
+{"query": "fingerprint login broke after updating the OS", "relevance": {"kb-acc-011": 3}, "category": "account"}
+{"query": "can't remember answers to my security questions anymore", "relevance": {"kb-acc-012": 3}, "category": "account"}
+{"query": "kiosk computer logs me out constantly", "relevance": {"kb-acc-013": 3}, "category": "account"}
+{"query": "federated login fails only on the phone app", "relevance": {"kb-acc-014": 3}, "category": "account"}
+{"query": "ended up with two duplicate accounts after an import", "relevance": {"kb-acc-015": 3}, "category": "account"}
+{"query": "laptop battery dies way faster than before", "relevance": {"kb-har-001": 3}, "category": "hardware"}
+{"query": "laptop is completely dead, won't power on", "relevance": {"kb-har-002": 3}, "category": "hardware"}
+{"query": "print jobs just sit in the queue forever", "relevance": {"kb-har-003": 3}, "category": "hardware"}
+{"query": "printouts look streaky and faded", "relevance": {"kb-har-004": 3}, "category": "hardware"}
+{"query": "docked laptop doesn't detect the external screen", "relevance": {"kb-har-005": 3}, "category": "hardware"}
+{"query": "monitor flickers at certain refresh rates", "relevance": {"kb-har-006": 3}, "category": "hardware"}
+{"query": "keyboard is typing the wrong letters", "relevance": {"kb-har-007": 3}, "category": "hardware"}
+{"query": "dock randomly drops every connected device", "relevance": {"kb-har-008": 3}, "category": "hardware"}
+{"query": "webcam looks really dark on video calls", "relevance": {"kb-har-009": 3}, "category": "hardware"}
+{"query": "external drive doesn't show up on the computer", "relevance": {"kb-har-010": 3}, "category": "hardware"}
+{"query": "laptop fan is loud all the time", "relevance": {"kb-har-011": 3}, "category": "hardware"}
+{"query": "second monitor stuck at a low resolution", "relevance": {"kb-har-012": 3}, "category": "hardware"}
+{"query": "trackpad registers one click as two", "relevance": {"kb-har-013": 3}, "category": "hardware"}
+{"query": "dark vertical stripe on the laptop screen", "relevance": {"kb-har-014": 3}, "category": "hardware"}
+{"query": "usb-c charging is painfully slow", "relevance": {"kb-har-015": 3}, "category": "hardware"}
+{"query": "app crashes the second it opens", "relevance": {"kb-sof-001": 3}, "category": "software"}
+{"query": "update gets stuck partway through install", "relevance": {"kb-sof-002": 3}, "category": "software"}
+{"query": "license key says invalid even though it's new", "relevance": {"kb-sof-003": 3}, "category": "software"}
+{"query": "app forgot how to open its own file type", "relevance": {"kb-sof-004": 3}, "category": "software"}
+{"query": "browser is sluggish after installing an extension", "relevance": {"kb-sof-005": 3}, "category": "software"}
+{"query": "software works for me but not my coworker on the same pc", "relevance": {"kb-sof-006": 3}, "category": "software"}
+{"query": "uninstall didn't fully remove the app, reinstall fails", "relevance": {"kb-sof-007": 3}, "category": "software"}
+{"query": "program locks up only on really big files", "relevance": {"kb-sof-008": 3}, "category": "software"}
+{"query": "one app crashes another whenever both run", "relevance": {"kb-sof-009": 3}, "category": "software"}
+{"query": "printer driver disappeared after an os update", "relevance": {"kb-sof-010": 3}, "category": "software"}
+{"query": "app settings look totally garbled now", "relevance": {"kb-sof-011": 3}, "category": "software"}
+{"query": "license portal shows fewer seats than we bought", "relevance": {"kb-sof-012": 3}, "category": "software"}
+{"query": "browser keeps nagging to save a password I already saved", "relevance": {"kb-sof-013": 3}, "category": "software"}
+{"query": "app gets slower the longer it stays open", "relevance": {"kb-sof-014": 3}, "category": "software"}
+{"query": "security policy is blocking a new app I just installed", "relevance": {"kb-sof-015": 3}, "category": "software"}
+{"query": "need to revert a shared doc to before someone's edit", "relevance": {"kb-sto-001": 3}, "category": "storage"}
+{"query": "cloud storage is full and uploads are failing", "relevance": {"kb-sto-002": 3}, "category": "storage"}
+{"query": "shared folder permissions aren't matching what I set", "relevance": {"kb-sto-003": 3}, "category": "storage"}
+{"query": "backup job hasn't actually run in weeks", "relevance": {"kb-sto-004": 3}, "category": "storage"}
+{"query": "restored backup is older than expected", "relevance": {"kb-sto-005": 3}, "category": "storage"}
+{"query": "file has been stuck syncing forever", "relevance": {"kb-sto-006": 3}, "category": "storage"}
+{"query": "teammate can't open a file I shared with them", "relevance": {"kb-sto-007": 3}, "category": "storage"}
+{"query": "a file is gone from the trash", "relevance": {"kb-sto-008": 3}, "category": "storage"}
+{"query": "file looks corrupted after a sync conflict", "relevance": {"kb-sto-009": 3}, "category": "storage"}
+{"query": "big video upload keeps failing", "relevance": {"kb-sto-010": 3}, "category": "storage"}
+{"query": "storage usage numbers don't match what I see in the browser", "relevance": {"kb-sto-011": 3}, "category": "storage"}
+{"query": "lost access to a team drive after the owner left", "relevance": {"kb-sto-012": 3}, "category": "storage"}
+{"query": "offline edits never synced back up", "relevance": {"kb-sto-013": 3}, "category": "storage"}
+{"query": "can't delete a file because of a legal hold", "relevance": {"kb-sto-014": 3}, "category": "storage"}
+{"query": "shared link expired way sooner than I set it", "relevance": {"kb-sto-015": 3}, "category": "storage"}
+{"query": "everyone hears an echo of themselves on the call", "relevance": {"kb-col-001": 3}, "category": "collaboration"}
+{"query": "screen share just shows a black window", "relevance": {"kb-col-002": 3}, "category": "collaboration"}
+{"query": "calendar invite never reaches people outside the company", "relevance": {"kb-col-003": 3}, "category": "collaboration"}
+{"query": "meeting recording isn't showing up anywhere", "relevance": {"kb-col-004": 3}, "category": "collaboration"}
+{"query": "chat notifications quit showing up on my desktop", "relevance": {"kb-col-005": 3}, "category": "collaboration"}
+{"query": "whiteboard drawings vanished after the meeting ended", "relevance": {"kb-col-006": 3}, "category": "collaboration"}
+{"query": "breakout rooms won't auto-assign people", "relevance": {"kb-col-007": 3}, "category": "collaboration"}
+{"query": "blur background option is greyed out on my laptop", "relevance": {"kb-col-008": 3}, "category": "collaboration"}
+{"query": "some people on the call have no audio, others are fine", "relevance": {"kb-col-009": 3}, "category": "collaboration"}
+{"query": "meeting shows at the wrong time for one person", "relevance": {"kb-col-010": 3}, "category": "collaboration"}
+{"query": "meeting link works on desktop but not on my phone", "relevance": {"kb-col-011": 3}, "category": "collaboration"}
+{"query": "chat history vanished after switching to a new laptop", "relevance": {"kb-col-012": 3}, "category": "collaboration"}
+{"query": "screen share is really laggy for the presenter", "relevance": {"kb-col-013": 3}, "category": "collaboration"}
+{"query": "poll answers are visible to everyone, should be host only", "relevance": {"kb-col-014": 3}, "category": "collaboration"}
+{"query": "one occurrence of a recurring meeting vanished", "relevance": {"kb-col-015": 3}, "category": "collaboration"}
+{"query": "outgoing email takes forever to actually send", "relevance": {"kb-mes-001": 3}, "category": "messaging"}
+{"query": "real emails keep landing in spam", "relevance": {"kb-mes-002": 3}, "category": "messaging"}
+{"query": "distribution list email doesn't reach everyone", "relevance": {"kb-mes-003": 3}, "category": "messaging"}
+{"query": "attachment disappears before the email arrives", "relevance": {"kb-mes-004": 3}, "category": "messaging"}
+{"query": "out of office reply doesn't fire for coworkers", "relevance": {"kb-mes-005": 3}, "category": "messaging"}
+{"query": "every email to one specific company bounces", "relevance": {"kb-mes-006": 3}, "category": "messaging"}
+{"query": "some folders came up empty after a mailbox move", "relevance": {"kb-mes-007": 3}, "category": "messaging"}
+{"query": "calendar invites show the wrong person as organizer", "relevance": {"kb-mes-008": 3}, "category": "messaging"}
+{"query": "email search only checks the folder I'm in", "relevance": {"kb-mes-009": 3}, "category": "messaging"}
+{"query": "read receipts never come back even though it's turned on", "relevance": {"kb-mes-010": 3}, "category": "messaging"}
+{"query": "sent mail from a shared inbox lands in my personal mailbox", "relevance": {"kb-mes-011": 3}, "category": "messaging"}
+{"query": "mailbox rules quit running after I changed my password", "relevance": {"kb-mes-012": 3}, "category": "messaging"}
+{"query": "new employee's signature doesn't match the template", "relevance": {"kb-mes-013": 3}, "category": "messaging"}
+{"query": "emails with big attachments are always slow", "relevance": {"kb-mes-014": 3}, "category": "messaging"}
+{"query": "vacation reply sends the same person multiple replies", "relevance": {"kb-mes-015": 3}, "category": "messaging"}
+{"query": "got a phishing email, how do I report it", "relevance": {"kb-sec-001": 3}, "category": "security"}
+{"query": "antivirus is flagging our own internal tool", "relevance": {"kb-sec-002": 3}, "category": "security"}
+{"query": "internal site is blocked by an expired certificate warning", "relevance": {"kb-sec-003": 3}, "category": "security"}
+{"query": "laptop failed a compliance check and lost access", "relevance": {"kb-sec-004": 3}, "category": "security"}
+{"query": "got an alert about a sign-in I don't recognize", "relevance": {"kb-sec-005": 3}, "category": "security"}
+{"query": "usb drive won't work on my work laptop", "relevance": {"kb-sec-006": 3}, "category": "security"}
+{"query": "vpn client throws a certificate trust error since the update", "relevance": {"kb-sec-007": 3}, "category": "security"}
+{"query": "encrypted file won't open after moving to a new laptop", "relevance": {"kb-sec-008": 3}, "category": "security"}
+{"query": "got an mfa prompt I never triggered", "relevance": {"kb-sec-009": 3}, "category": "security"}
+{"query": "security training video won't mark itself as done", "relevance": {"kb-sec-010": 3}, "category": "security"}
+{"query": "personal firewall is blocking the company vpn", "relevance": {"kb-sec-011": 3}, "category": "security"}
+{"query": "dlp policy is blocking a file transfer that should be fine", "relevance": {"kb-sec-012": 3}, "category": "security"}
+{"query": "password manager won't autofill on one particular site", "relevance": {"kb-sec-013": 3}, "category": "security"}
+{"query": "laptop reboots in a loop after a security patch", "relevance": {"kb-sec-014": 3}, "category": "security"}
+{"query": "account recovery keeps asking for info I don't have anymore", "relevance": {"kb-sec-015": 3}, "category": "security"}
+{"query": "work app crashes every time I open it since the update", "relevance": {"kb-mob-001": 3}, "category": "mobile"}
+{"query": "stopped getting push notifications on my phone", "relevance": {"kb-mob-002": 3}, "category": "mobile"}
+{"query": "device enrollment freezes at the same step every time", "relevance": {"kb-mob-003": 3}, "category": "mobile"}
+{"query": "app on my phone never shows fresh data", "relevance": {"kb-mob-004": 3}, "category": "mobile"}
+{"query": "work profile won't let me use the camera", "relevance": {"kb-mob-005": 3}, "category": "mobile"}
+{"query": "work app asks for a pin instead of face unlock now", "relevance": {"kb-mob-006": 3}, "category": "mobile"}
+{"query": "internal app install fails with a signature error", "relevance": {"kb-mob-007": 3}, "category": "mobile"}
+{"query": "phone app logs me out every time it restarts", "relevance": {"kb-mob-008": 3}, "category": "mobile"}
+{"query": "work phone battery is dead every morning", "relevance": {"kb-mob-009": 3}, "category": "mobile"}
+{"query": "my managed phone got wiped out of nowhere", "relevance": {"kb-mob-010": 3}, "category": "mobile"}
+{"query": "free internal app is asking me to pay in the app store", "relevance": {"kb-mob-011": 3}, "category": "mobile"}
+{"query": "never get the two factor approval push on my phone", "relevance": {"kb-mob-012": 3}, "category": "mobile"}
+{"query": "phone calendar shows meetings in the wrong timezone", "relevance": {"kb-mob-013": 3}, "category": "mobile"}
+{"query": "email app won't sync big attachments on cellular", "relevance": {"kb-mob-014": 3}, "category": "mobile"}
+{"query": "phone says non-compliant even though everything looks fine", "relevance": {"kb-mob-015": 3}, "category": "mobile"}
+{"query": "wireless mouse cursor keeps jumping around", "relevance": {"kb-per-001": 3}, "category": "peripherals"}
+{"query": "network printer shows offline even though it's on", "relevance": {"kb-per-002": 3}, "category": "peripherals"}
+{"query": "double sided scans come out blank on the back", "relevance": {"kb-per-003": 3}, "category": "peripherals"}
+{"query": "bluetooth headset connects but plays no sound", "relevance": {"kb-per-004": 3}, "category": "peripherals"}
+{"query": "dock only charges my laptop with one specific cable", "relevance": {"kb-per-005": 3}, "category": "peripherals"}
+{"query": "wireless keyboard and mouse both drop out together", "relevance": {"kb-per-006": 3}, "category": "peripherals"}
+{"query": "label printer is printing at the wrong size", "relevance": {"kb-per-007": 3}, "category": "peripherals"}
+{"query": "headset mic works in one app but not another", "relevance": {"kb-per-008": 3}, "category": "peripherals"}
+{"query": "double sided printing jams every single time", "relevance": {"kb-per-009": 3}, "category": "peripherals"}
+{"query": "external drive is much slower through the dock", "relevance": {"kb-per-010": 3}, "category": "peripherals"}
+{"query": "both monitors flicker only when they're both plugged into the dock", "relevance": {"kb-per-011": 3}, "category": "peripherals"}
+{"query": "new network printer isn't showing up on any computer", "relevance": {"kb-per-012": 3}, "category": "peripherals"}
+{"query": "scan to network folder crashes the scanner software", "relevance": {"kb-per-013": 3}, "category": "peripherals"}
+{"query": "dock's screens work but the usb ports are dead", "relevance": {"kb-per-014": 3}, "category": "peripherals"}
+{"query": "wireless clicker skips slides randomly", "relevance": {"kb-per-015": 3}, "category": "peripherals"}
