@@ -15,7 +15,7 @@ import json
 import subprocess
 from pathlib import Path
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, queries_for_split
+from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, log_to_mlflow, queries_for_split
 
 
 def git_commit() -> str:
@@ -46,6 +46,7 @@ def main() -> None:
     out_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps({"config_id": config.id, "split": config.split, "summary": result["summary"]}, indent=2))
     print(f"wrote -> {out_path}")
+    print(f"mlflow logged: {log_to_mlflow(result)}")
 
 
 if __name__ == "__main__":

@@ -21,7 +21,7 @@ from pathlib import Path
 
 import numpy as np
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, queries_for_split
+from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, log_to_mlflow, queries_for_split
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "configs" / "experiments"
@@ -76,6 +76,7 @@ def main() -> None:
         }
         all_results[config_id] = payload
         (OUT_DIR / f"{config_id}.json").write_text(json.dumps({**payload, "rows": result_full["rows"]}, indent=2), encoding="utf-8")
+        log_to_mlflow({"config": config.to_dict(), "summary": result_full["summary"]}, experiment_name="support-search-final-test")
 
         s = result_full["summary"]
         g = result_gap["summary"] if result_gap else None

@@ -335,3 +335,41 @@ def evaluate_config(
         "summary": summary,
         "rows": rows,
     }
+
+
+def log_to_mlflow(result: dict, experiment_name: str = "support-search-ranking-experiments") -> bool:
+    """Best-effort MLflow logging (Section 28). Returns True if logged.
+
+    Mirrors the original repository's own try/except ImportError pattern in
+    cli.py:run_evaluation (kept, not rebuilt, since that pattern already
+    worked) but logs the richer config/provenance this framework produces:
+    git commit, split, K, every active feature weight, fusion method,
+    model names, and the full relevance + latency metric set.
+    """
+    try:
+        import mlflow
+    except ImportError:
+        return False
+
+    config = result["config"]
+    summary = result["summary"]
+    mlflow.set_experiment(experiment_name)
+    with mlflow.start_run(run_name=f"{config['id']}-{config['split']}"):
+        mlflow.log_params(
+            {
+                "config_id": config["id"],
+                "split": config["split"],
+                "git_commit": config.get("git_commit", ""),
+                "embedding_model": config["embedding_model"],
+                "fusion": config["fusion"],
+                "normalization": config["normalization"],
+                "candidate_k": config["candidate_k"],
+                "rerank_depth": config["rerank_depth"],
+                "top_k": config["top_k"],
+                "reranker_model": config.get("reranker_model"),
+                "seed": config.get("seed"),
+                **{f"feature_weight__{k}": v for k, v in config["retrieval_features"].items()},
+            }
+        )
+        mlflow.log_metrics({k: v for k, v in summary.items() if isinstance(v, (int, float))})
+    return True
