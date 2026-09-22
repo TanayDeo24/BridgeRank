@@ -1,0 +1,65 @@
+[
+  {
+    "config_id": "full",
+    "ndcg_at_k": 0.9655,
+    "delta_ndcg_vs_full": 0.0,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833,
+    "p95_latency_ms": 44.846
+  },
+  {
+    "config_id": "full_minus_lexical",
+    "ndcg_at_k": 0.9672,
+    "delta_ndcg_vs_full": 0.0017,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2067,
+    "recall_at_k": 1.0,
+    "p95_latency_ms": 41.742
+  },
+  {
+    "config_id": "full_minus_dense",
+    "ndcg_at_k": 0.9655,
+    "delta_ndcg_vs_full": 0.0,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833,
+    "p95_latency_ms": 41.564
+  },
+  {
+    "config_id": "full_minus_cross_encoder",
+    "ndcg_at_k": 0.9838,
+    "delta_ndcg_vs_full": 0.0183,
+    "mrr": 0.9778,
+    "precision_at_k": 0.2067,
+    "recall_at_k": 1.0,
+    "p95_latency_ms": 7.043
+  },
+  {
+    "config_id": "full_minus_title_overlap",
+    "ndcg_at_k": 0.9655,
+    "delta_ndcg_vs_full": 0.0,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833,
+    "p95_latency_ms": 40.428
+  },
+  {
+    "config_id": "full_minus_freshness",
+    "ndcg_at_k": 0.9655,
+    "delta_ndcg_vs_full": 0.0,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833,
+    "p95_latency_ms": 41.273
+  },
+  {
+    "config_id": "full_minus_source_authority",
+    "ndcg_at_k": 0.9655,
+    "delta_ndcg_vs_full": 0.0,
+    "mrr": 0.9567,
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833,
+    "p95_latency_ms": 42.665
+  }
+]
