@@ -20,6 +20,17 @@ monitoring, release gates, and rollback.
 > **Current benchmark scope:** The repository includes a small synthetic corpus and ten graded queries so the
 > complete system can be reproduced quickly. The reported numbers validate the pipeline; they are not claims
 > about performance on a production support corpus.
+>
+> **Update:** this repository underwent a full search-relevance engineering audit and expansion (see
+> [docs/SEARCH_RELEVANCE_AUDIT.md](docs/SEARCH_RELEVANCE_AUDIT.md)). The evaluation corpus was expanded to
+> 150 documents / 150 graded queries with a persisted dev/validation/test split (provenance disclosed in
+> [docs/DATA_PROVENANCE.md](docs/DATA_PROVENANCE.md)); the original 10/10 corpus and its benchmark are
+> preserved unchanged at `data/*_v1.jsonl` for comparison. A diversified, pluggable ranking-feature
+> framework, real parallel experiment tooling, a validation-only optimization procedure, feature
+> ablations, a frozen lexical-gap slice, and a single held-out test evaluation were added on top — full
+> results in [docs/BENCHMARK_REPORT.md](docs/BENCHMARK_REPORT.md), architecture in
+> [docs/FINAL_ARCHITECTURE.md](docs/FINAL_ARCHITECTURE.md), and what changed vs. what's original in
+> [docs/CHANGE_REPORT.md](docs/CHANGE_REPORT.md).
 
 ## Project highlights
 
@@ -33,9 +44,18 @@ monitoring, release gates, and rollback.
 | Operational feedback | Query audit events, graded human feedback, dashboard, and failure analysis |
 | Engineering quality | Pytest coverage threshold, Ruff, pre-commit, Dependabot, CI, and load testing |
 
-**Current reproducible benchmark:** hybrid retrieval achieved `0.650 Recall@3`, `0.700 MRR`, and
-`0.690 nDCG@3`; BM25 remained the current lightweight champion at `0.725 nDCG@3`. I retained this result
-instead of presenting hybrid search as automatically superior—the experiment determines the champion.
+**Original 10-query lightweight benchmark (preserved, `data/*_v1.jsonl`):** hybrid retrieval achieved
+`0.650 Recall@3`, `0.700 MRR`, and `0.690 nDCG@3`; BM25 remained the lightweight champion at
+`0.725 nDCG@3` — that result stands unchanged and is still reproducible.
+
+**Current 150-query benchmark, held-out test split (n=30), real Sentence-Transformer dense model, K=5
+primary (see [docs/BENCHMARK_REPORT.md](docs/BENCHMARK_REPORT.md) for the full methodology):** the
+validation-optimized system (`bm25` weight 0.30 / `dense` weight 0.70, no reranking) reached
+`0.987 nDCG@5` / `0.983 MRR` / 0% failed queries, vs. BM25-only at `0.867 nDCG@5`. On the frozen
+20.7%-of-corpus lexical-gap slice, BM25 drops to `0.404 nDCG@5` while the optimized system holds
+`0.926 nDCG@5`. Cross-encoder reranking and a machine-learned linear fusion were both tried and both
+**underperformed** hand-tuned weighted-sum fusion on the validation split — reported as negative
+results, not hidden, in [docs/BENCHMARK_REPORT.md](docs/BENCHMARK_REPORT.md) Section 17.
 
 ## Table of contents
 
@@ -217,7 +237,7 @@ Install and validate the lightweight development profile:
 ```bash
 pip install -e ".[dev]"
 pytest -q
-ruff check src tests loadtest dashboard
+ruff check src tests loadtest dashboard scripts
 ```
 
 Build the index, run the benchmark, and enforce the release gate:
@@ -498,7 +518,7 @@ search, relevance feedback, artifact round-tripping, and checksum tampering.
 
 ```bash
 pytest -q
-ruff check src tests loadtest dashboard
+ruff check src tests loadtest dashboard scripts
 pytest --cov=support_search --cov-report=term-missing
 ```
 

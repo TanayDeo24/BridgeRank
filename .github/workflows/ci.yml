@@ -12,7 +12,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -e ".[dev]"
-      - run: ruff check src tests loadtest dashboard
+      - run: ruff check src tests loadtest dashboard scripts
       - run: ruff format --check src tests loadtest dashboard
       - run: pytest --cov=support_search --cov-report=term-missing --cov-report=xml
       - run: python -m support_search.cli build-index

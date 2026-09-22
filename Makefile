@@ -4,7 +4,7 @@ install:
 test:
 	pytest -q
 lint:
-	ruff check src tests
+	ruff check src tests scripts
 serve:
 	uvicorn support_search.api:app --reload
 index:
