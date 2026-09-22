@@ -1,0 +1,557 @@
+{
+  "config": {
+    "id": "bm25_only",
+    "description": "Lexical-only baseline: BM25 score, weighted_sum with weight 1.0.",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "index_type": "flat",
+    "candidate_k": 50,
+    "rerank_depth": 0,
+    "top_k": 5,
+    "retrieval_features": {
+      "bm25": 1.0,
+      "dense": 0.0
+    },
+    "fusion": "weighted_sum",
+    "normalization": "minmax",
+    "reranker_model": null,
+    "rerank_weights": {
+      "retrieval_score": 0.0,
+      "cross_encoder": 1.0
+    },
+    "learned_model_path": null,
+    "seed": 42,
+    "split": "test",
+    "git_commit": ""
+  },
+  "full_test": {
+    "precision_at_k": 0.18666666666666668,
+    "recall_at_k": 0.9,
+    "mrr": 0.8566666666666667,
+    "ndcg_at_k": 0.8672594186935333,
+    "failed_query_rate": 0.1,
+    "error_rate": 0.0,
+    "query_count": 30,
+    "p50_latency_ms": 6.038041028659791,
+    "p95_latency_ms": 12.298792018555105,
+    "p50_retrieval_ms": 5.867082974873483,
+    "p95_retrieval_ms": 12.055250001139939,
+    "p50_feature_fusion_ms": 0.173041014932096,
+    "p95_feature_fusion_ms": 0.20145904272794724,
+    "p50_rerank_ms": 0.0,
+    "p95_rerank_ms": 0.0
+  },
+  "lexical_gap_test": {
+    "precision_at_k": 0.12000000000000002,
+    "recall_at_k": 0.6,
+    "mrr": 0.33999999999999997,
+    "ndcg_at_k": 0.40355651216119987,
+    "failed_query_rate": 0.4,
+    "error_rate": 0.0,
+    "query_count": 5,
+    "p50_latency_ms": 5.568916036281735,
+    "p95_latency_ms": 5.7591249933466315,
+    "p50_retrieval_ms": 5.395915999542922,
+    "p95_retrieval_ms": 5.588917003478855,
+    "p50_feature_fusion_ms": 0.17150002531707287,
+    "p95_feature_fusion_ms": 0.17300003673881292,
+    "p50_rerank_ms": 0.0,
+    "p95_rerank_ms": 0.0
+  },
+  "lexical_gap_test_n": 5,
+  "bootstrap_ci_ndcg_at_k": {
+    "point_estimate": 0.8672594186935333,
+    "ci_low": 0.746228426907818,
+    "ci_high": 0.9666666666666667,
+    "n": 30,
+    "n_boot": 5000
+  },
+  "bootstrap_ci_mrr": {
+    "point_estimate": 0.8566666666666667,
+    "ci_low": 0.73,
+    "ci_high": 0.9666666666666667,
+    "n": 30,
+    "n_boot": 5000
+  },
+  "rows": [
+    {
+      "query": "wifi disconnects on just my laptop",
+      "category": "network",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-net-013",
+        "kb-sto-013",
+        "kb-col-012",
+        "kb-col-008",
+        "kb-sec-006"
+      ]
+    },
+    {
+      "query": "vpn app won't connect at all",
+      "category": "network",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-net-006",
+        "kb-net-013",
+        "kb-mob-015",
+        "kb-mob-009",
+        "kb-har-002"
+      ]
+    },
+    {
+      "query": "home printer unreachable while vpn is on",
+      "category": "network",
+      "precision_at_k": 0.4,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-014",
+        "kb-net-004",
+        "kb-per-009",
+        "kb-per-002",
+        "kb-per-012"
+      ]
+    },
+    {
+      "query": "authenticator app codes keep getting rejected",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-002",
+        "kb-mob-012",
+        "kb-mes-003",
+        "kb-sto-005",
+        "kb-per-004"
+      ]
+    },
+    {
+      "query": "never got the password reset email",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-007",
+        "kb-acc-001",
+        "kb-sec-009",
+        "kb-sec-013",
+        "kb-acc-008"
+      ]
+    },
+    {
+      "query": "account got disabled right after my manager changed",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-010",
+        "kb-mes-012",
+        "kb-sec-015",
+        "kb-per-002",
+        "kb-sec-013"
+      ]
+    },
+    {
+      "query": "print jobs just sit in the queue forever",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-003",
+        "kb-sto-013",
+        "kb-col-012",
+        "kb-har-004",
+        "kb-har-015"
+      ]
+    },
+    {
+      "query": "keyboard is typing the wrong letters",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-007",
+        "kb-per-006",
+        "kb-mob-013",
+        "kb-acc-003",
+        "kb-per-007"
+      ]
+    },
+    {
+      "query": "trackpad registers one click as two",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-013",
+        "kb-sof-009",
+        "kb-sto-009",
+        "kb-mob-015",
+        "kb-acc-015"
+      ]
+    },
+    {
+      "query": "uninstall didn't fully remove the app, reinstall fails",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2,
+      "ndcg_at_k": 0.38685280723454163,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-007",
+        "kb-mob-001",
+        "kb-mob-004",
+        "kb-mes-012",
+        "kb-sof-007"
+      ]
+    },
+    {
+      "query": "one app crashes another whenever both run",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-009",
+        "kb-per-008",
+        "kb-per-006",
+        "kb-per-011",
+        "kb-mob-008"
+      ]
+    },
+    {
+      "query": "security policy is blocking a new app I just installed",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-015",
+        "kb-col-012",
+        "kb-sto-013",
+        "kb-acc-012",
+        "kb-sec-006"
+      ]
+    },
+    {
+      "query": "backup job hasn't actually run in weeks",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-004",
+        "kb-sto-005",
+        "kb-acc-002",
+        "kb-col-001",
+        "kb-mes-010"
+      ]
+    },
+    {
+      "query": "big video upload keeps failing",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-010",
+        "kb-net-001",
+        "kb-per-015",
+        "kb-har-014",
+        "kb-col-013"
+      ]
+    },
+    {
+      "query": "storage usage numbers don't match what I see in the browser",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-011",
+        "kb-sto-003",
+        "kb-sof-013",
+        "kb-sof-008",
+        "kb-mob-009"
+      ]
+    },
+    {
+      "query": "whiteboard drawings vanished after the meeting ended",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-006",
+        "kb-col-015",
+        "kb-col-004",
+        "kb-col-003",
+        "kb-mes-012"
+      ]
+    },
+    {
+      "query": "breakout rooms won't auto-assign people",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-007",
+        "kb-net-002",
+        "kb-net-001",
+        "kb-mes-007",
+        "kb-mes-008"
+      ]
+    },
+    {
+      "query": "blur background option is greyed out on my laptop",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-008",
+        "kb-mob-008",
+        "kb-sof-006",
+        "kb-net-010",
+        "kb-mob-002"
+      ]
+    },
+    {
+      "query": "every email to one specific company bounces",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-013",
+        "kb-mes-006",
+        "kb-sec-004",
+        "kb-sto-012",
+        "kb-sto-006"
+      ]
+    },
+    {
+      "query": "some folders came up empty after a mailbox move",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-007",
+        "kb-mes-009",
+        "kb-mes-012",
+        "kb-net-009",
+        "kb-sof-011"
+      ]
+    },
+    {
+      "query": "calendar invites show the wrong person as organizer",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-008",
+        "kb-col-003",
+        "kb-mob-013",
+        "kb-col-010",
+        "kb-col-012"
+      ]
+    },
+    {
+      "query": "got a phishing email, how do I report it",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-001",
+        "kb-sto-003",
+        "kb-mes-004",
+        "kb-sof-008",
+        "kb-sec-014"
+      ]
+    },
+    {
+      "query": "antivirus is flagging our own internal tool",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-002",
+        "kb-net-005",
+        "kb-mob-011",
+        "kb-mes-005",
+        "kb-mob-007"
+      ]
+    },
+    {
+      "query": "encrypted file won't open after moving to a new laptop",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-008",
+        "kb-sof-004",
+        "kb-sto-007",
+        "kb-sec-007",
+        "kb-acc-010"
+      ]
+    },
+    {
+      "query": "work app asks for a pin instead of face unlock now",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-006",
+        "kb-mes-014",
+        "kb-col-002",
+        "kb-mob-002",
+        "kb-acc-012"
+      ]
+    },
+    {
+      "query": "free internal app is asking me to pay in the app store",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-011",
+        "kb-mob-007",
+        "kb-mob-009",
+        "kb-mob-004",
+        "kb-col-011"
+      ]
+    },
+    {
+      "query": "phone says non-compliant even though everything looks fine",
+      "category": "mobile",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-sec-010",
+        "kb-per-002",
+        "kb-mes-010",
+        "kb-mob-009",
+        "kb-col-011"
+      ]
+    },
+    {
+      "query": "dock only charges my laptop with one specific cable",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-005",
+        "kb-har-008",
+        "kb-har-006",
+        "kb-net-001",
+        "kb-sto-006"
+      ]
+    },
+    {
+      "query": "headset mic works in one app but not another",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-008",
+        "kb-col-009",
+        "kb-per-004",
+        "kb-acc-005",
+        "kb-acc-014"
+      ]
+    },
+    {
+      "query": "external drive is much slower through the dock",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-010",
+        "kb-har-010",
+        "kb-sec-006",
+        "kb-col-003",
+        "kb-per-011"
+      ]
+    }
+  ]
+}

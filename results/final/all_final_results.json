@@ -1,0 +1,455 @@
+{
+  "bm25_only": {
+    "config": {
+      "id": "bm25_only",
+      "description": "Lexical-only baseline: BM25 score, weighted_sum with weight 1.0.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 0,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 1.0,
+        "dense": 0.0
+      },
+      "fusion": "weighted_sum",
+      "normalization": "minmax",
+      "reranker_model": null,
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": null,
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.18666666666666668,
+      "recall_at_k": 0.9,
+      "mrr": 0.8566666666666667,
+      "ndcg_at_k": 0.8672594186935333,
+      "failed_query_rate": 0.1,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 6.038041028659791,
+      "p95_latency_ms": 12.298792018555105,
+      "p50_retrieval_ms": 5.867082974873483,
+      "p95_retrieval_ms": 12.055250001139939,
+      "p50_feature_fusion_ms": 0.173041014932096,
+      "p95_feature_fusion_ms": 0.20145904272794724,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.12000000000000002,
+      "recall_at_k": 0.6,
+      "mrr": 0.33999999999999997,
+      "ndcg_at_k": 0.40355651216119987,
+      "failed_query_rate": 0.4,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 5.568916036281735,
+      "p95_latency_ms": 5.7591249933466315,
+      "p50_retrieval_ms": 5.395915999542922,
+      "p95_retrieval_ms": 5.588917003478855,
+      "p50_feature_fusion_ms": 0.17150002531707287,
+      "p95_feature_fusion_ms": 0.17300003673881292,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 0.8672594186935333,
+      "ci_low": 0.746228426907818,
+      "ci_high": 0.9666666666666667,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 0.8566666666666667,
+      "ci_low": 0.73,
+      "ci_high": 0.9666666666666667,
+      "n": 30,
+      "n_boot": 5000
+    }
+  },
+  "dense_only": {
+    "config": {
+      "id": "dense_only",
+      "description": "Semantic-only baseline: real Sentence-Transformers dense similarity.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 0,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 0.0,
+        "dense": 1.0
+      },
+      "fusion": "weighted_sum",
+      "normalization": "minmax",
+      "reranker_model": null,
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": null,
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.20666666666666667,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 0.9991252564586277,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 5.786749999970198,
+      "p95_latency_ms": 6.395000033080578,
+      "p50_retrieval_ms": 5.606332968454808,
+      "p95_retrieval_ms": 6.222125026397407,
+      "p50_feature_fusion_ms": 0.17320801271125674,
+      "p95_feature_fusion_ms": 0.18966704374179244,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 5.577166972216219,
+      "p95_latency_ms": 5.754042009357363,
+      "p50_retrieval_ms": 5.405374977272004,
+      "p95_retrieval_ms": 5.581458972301334,
+      "p50_feature_fusion_ms": 0.17258303705602884,
+      "p95_feature_fusion_ms": 0.1728750066831708,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 0.9991252564586277,
+      "ci_low": 0.9973757693758831,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    }
+  },
+  "hybrid_weighted": {
+    "config": {
+      "id": "hybrid_weighted",
+      "description": "Original repository's fusion strategy, generalized: min-max normalized weighted sum of BM25 + real dense similarity, alpha=0.55 (dense weight), matching the original hardcoded default before any tuning.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 0,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 0.45,
+        "dense": 0.55
+      },
+      "fusion": "weighted_sum",
+      "normalization": "minmax",
+      "reranker_model": null,
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": null,
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.20666666666666667,
+      "recall_at_k": 1.0,
+      "mrr": 0.9444444444444444,
+      "ndcg_at_k": 0.9587286502380972,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 5.77904301462695,
+      "p95_latency_ms": 6.3737090094946325,
+      "p50_retrieval_ms": 5.597417009994388,
+      "p95_retrieval_ms": 6.197625014465302,
+      "p50_feature_fusion_ms": 0.17670803936198354,
+      "p95_feature_fusion_ms": 0.19891600823029876,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.7666666666666667,
+      "ndcg_at_k": 0.8261859507142916,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 5.504833010490984,
+      "p95_latency_ms": 5.752081982791424,
+      "p50_retrieval_ms": 5.3312499658204615,
+      "p95_retrieval_ms": 5.5774159845896065,
+      "p50_feature_fusion_ms": 0.17512502381578088,
+      "p95_feature_fusion_ms": 0.1840839977376163,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 0.9587286502380972,
+      "ci_low": 0.9087286502380972,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 0.9444444444444444,
+      "ci_low": 0.8777777777777778,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    }
+  },
+  "cross_encoder_rerank": {
+    "config": {
+      "id": "cross_encoder_rerank",
+      "description": "hybrid_weighted retrieval stage + cross-encoder reranking over the top candidates (Gate 1 repair: cross-encoder now genuinely evaluated).",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 20,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 0.45,
+        "dense": 0.55
+      },
+      "fusion": "weighted_sum",
+      "normalization": "minmax",
+      "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": null,
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.20666666666666667,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 34.010250004939735,
+      "p95_latency_ms": 49.732041894458234,
+      "p50_retrieval_ms": 6.244500051252544,
+      "p95_retrieval_ms": 8.069832983892411,
+      "p50_feature_fusion_ms": 0.1787919900380075,
+      "p95_feature_fusion_ms": 0.24262501392513514,
+      "p50_rerank_ms": 27.39491598913446,
+      "p95_rerank_ms": 42.058957973495126
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 37.65116701833904,
+      "p95_latency_ms": 64.22116700559855,
+      "p50_retrieval_ms": 8.23883299017325,
+      "p95_retrieval_ms": 13.808457995764911,
+      "p50_feature_fusion_ms": 0.331625051330775,
+      "p95_feature_fusion_ms": 0.36504201125353575,
+      "p50_rerank_ms": 29.080708976835012,
+      "p95_rerank_ms": 50.0476669985801
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 1.0,
+      "ci_low": 1.0,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    }
+  },
+  "hybrid_learned": {
+    "config": {
+      "id": "hybrid_learned",
+      "description": "Weighted sum whose weights come from ranking_model.fit_logistic_rank_model trained on the DEV split (machine-learned linear ranking model).",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 0,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 1.0,
+        "dense": 1.0,
+        "title_overlap": 1.0,
+        "freshness": 1.0,
+        "source_authority": 1.0
+      },
+      "fusion": "learned_linear",
+      "normalization": "minmax",
+      "reranker_model": null,
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": "/Users/tanaydeo/Documents/hybrid-support-search-main/artifacts/models/learned_linear_v1.json",
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.19333333333333336,
+      "recall_at_k": 0.9333333333333333,
+      "mrr": 0.8677777777777779,
+      "ndcg_at_k": 0.8830513418188277,
+      "failed_query_rate": 0.06666666666666667,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 6.721375975757837,
+      "p95_latency_ms": 8.62895796308294,
+      "p50_retrieval_ms": 5.905208003241569,
+      "p95_retrieval_ms": 7.795290963258594,
+      "p50_feature_fusion_ms": 0.8336669998243451,
+      "p95_feature_fusion_ms": 0.9168750257231295,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.12000000000000002,
+      "recall_at_k": 0.6,
+      "mrr": 0.33999999999999997,
+      "ndcg_at_k": 0.40355651216119987,
+      "failed_query_rate": 0.4,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 6.347791058942676,
+      "p95_latency_ms": 6.481165939476341,
+      "p50_retrieval_ms": 5.561166035477072,
+      "p95_retrieval_ms": 5.631207954138517,
+      "p50_feature_fusion_ms": 0.827083014883101,
+      "p95_feature_fusion_ms": 0.8499579853378236,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 0.8830513418188277,
+      "ci_low": 0.774630630124849,
+      "ci_high": 0.9710309917857153,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 0.8677777777777778,
+      "ci_low": 0.7511111111111111,
+      "ci_high": 0.9666666666666667,
+      "n": 30,
+      "n_boot": 5000
+    }
+  },
+  "final_frozen": {
+    "config": {
+      "id": "final_frozen",
+      "description": "Frozen post-optimization configuration, selected on VALIDATION only. See docs/BENCHMARK_REPORT.md Section 13 for the full procedure.",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "index_type": "flat",
+      "candidate_k": 50,
+      "rerank_depth": 0,
+      "top_k": 5,
+      "retrieval_features": {
+        "bm25": 0.30000000000000004,
+        "dense": 0.7
+      },
+      "fusion": "weighted_sum",
+      "normalization": "minmax",
+      "reranker_model": null,
+      "rerank_weights": {
+        "retrieval_score": 0.0,
+        "cross_encoder": 1.0
+      },
+      "learned_model_path": null,
+      "seed": 42,
+      "split": "test",
+      "git_commit": ""
+    },
+    "full_test": {
+      "precision_at_k": 0.20666666666666667,
+      "recall_at_k": 1.0,
+      "mrr": 0.9833333333333333,
+      "ndcg_at_k": 0.98712573271594,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 30,
+      "p50_latency_ms": 5.769207957200706,
+      "p95_latency_ms": 6.4020000281743705,
+      "p50_retrieval_ms": 5.594666989054531,
+      "p95_retrieval_ms": 6.228292011655867,
+      "p50_feature_fusion_ms": 0.17508299788460135,
+      "p95_feature_fusion_ms": 0.18262496450915933,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test": {
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.9,
+      "ndcg_at_k": 0.9261859507142916,
+      "failed_query_rate": 0.0,
+      "error_rate": 0.0,
+      "query_count": 5,
+      "p50_latency_ms": 5.542041035369039,
+      "p95_latency_ms": 5.786042020190507,
+      "p50_retrieval_ms": 5.367208039388061,
+      "p95_retrieval_ms": 5.610833002720028,
+      "p50_feature_fusion_ms": 0.175209017470479,
+      "p95_feature_fusion_ms": 0.17791602294892073,
+      "p50_rerank_ms": 0.0,
+      "p95_rerank_ms": 0.0
+    },
+    "lexical_gap_test_n": 5,
+    "bootstrap_ci_ndcg_at_k": {
+      "point_estimate": 0.98712573271594,
+      "ci_low": 0.9619491238842618,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    },
+    "bootstrap_ci_mrr": {
+      "point_estimate": 0.9833333333333333,
+      "ci_low": 0.95,
+      "ci_high": 1.0,
+      "n": 30,
+      "n_boot": 5000
+    }
+  }
+}
