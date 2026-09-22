@@ -191,10 +191,15 @@ Source: `results/final/*.json` → `full_test`. Exact stored values, displayed t
 
 - **Final vs. BM25 absolute nDCG@5 delta: +0.1199** (0.987126 − 0.867259)
 - **Final vs. BM25 relative nDCG@5 improvement: +13.82%** (0.119866 / 0.867259)
-- 95% bootstrap CIs (5000 resamples, n=30): BM25 [0.7462, 0.9667]; Final [0.9619, 1.0000]. The CIs
-  do not overlap in their lower/upper extremes but both configs' CIs include values close to each
-  other in the 0.96-0.97 range — treat this as a directionally strong but not overwhelming
-  separation at n=30 (see Part 2-I).
+- **Separate (unpaired) 95% bootstrap CIs** (5000 resamples, n=30, each config resampled
+  independently): BM25 [0.7462, 0.9667]; Final [0.9619, 1.0000]. **These two intervals overlap** —
+  the overlap region is approximately [0.9619, 0.9667]. Comparing two independently-computed CIs
+  for overlap is a weak, conservative way to reason about a difference between two configs measured
+  on the *same* queries; it is reported here only as a descriptive fact about each config's own
+  uncertainty, not as evidence about the delta between them. **The correct tool for that is the
+  paired bootstrap CI on the delta itself, computed in Part 2-I below** — it is not the same
+  calculation as comparing these two separate intervals, and it is the number that should be cited
+  when discussing whether the improvement is robust.
 
 ### D. Lexical-gap metrics
 
@@ -215,7 +220,22 @@ lexical gap" claim:**
 
 **DESCRIPTIVE FULL-SLICE RESULT — NOT PURE HELD-OUT TEST:** not computed / not available (see Part 1).
 
-### E. Feature ablation metrics (validation split, n=90, `full`-architecture configs)
+### E. Feature ablation metrics (validation split, n=30, `full`-architecture configs)
+
+**Split provenance, verified this pass:** `scripts/run_ablations.py` calls
+`queries_for_split("val")` (line 43) and explicitly sets `config.split = "val"` (line 50) for every
+ablation config. The stored artifact confirms this independently:
+`results/ablations/full.json` → `summary.query_count = 30` and `len(rows) = 30` — matching the
+validation split's 30 queries in `data/splits.json`, not the dev split's 90. **The correct label is
+validation split, n=30.** (An earlier draft of this closure report incorrectly wrote "n=90" here —
+a transcription error, not a rerun or a code/data issue; corrected in this pass. No other document
+in this repository contained the error — `docs/BENCHMARK_REPORT.md` §12 already said "validation"
+without a count and required no change.)
+
+Ablations were used for **post-hoc interpretation/analysis only** — "which signals matter" — not
+for any tuning decision. The tuning decisions themselves (fusion weight, fusion method, whether to
+rerank) were made separately in `scripts/optimize.py`, also on the validation split, before the
+ablation study ran (see git commit order in Part 1 of this report).
 
 Source: `results/ablations/ablation_summary.json`. Exact stored values.
 
@@ -310,12 +330,14 @@ exist.**
 
 | Item | Status |
 |---|---|
-| Bootstrap CIs run? | Yes, for the full test split (n=30), 5000 resamples, seed=42, `scripts/final_test_evaluation.py::bootstrap_ci` |
-| Metrics with CIs | nDCG@5 and MRR, for every config, full test split only |
-| Test query count | 30 |
+| Unpaired bootstrap CIs run? | Yes, for the full test split (n=30), 5000 resamples, seed=42, `scripts/final_test_evaluation.py::bootstrap_ci` — each config resampled independently |
+| **Paired bootstrap CI run?** | **Yes — added this closure pass, purely observational, computed from the already-frozen `results/final/bm25_only.json` and `results/final/final_frozen.json` per-query rows (no rerun of any ranking code, no methodology change). Script: `scripts/paired_bootstrap_ci.py`. Output: `results/final/paired_bootstrap_ndcg_delta.json`.** |
+| Metrics with CIs | nDCG@5 (unpaired, per-config) and MRR (unpaired, per-config), for every config, full test split only; nDCG@5 delta (paired, final vs. BM25) added this pass |
+| Test query count | 30 (same 30 queries for both configs in the paired comparison — verified identical query set and order before pairing) |
 | Lexical-gap test query count | 5 — **no CI computed at this sample size (disclosed, not fabricated)** |
-| Is the full-test final-vs-BM25 improvement stable? | Directionally yes — CIs are disjoint at their extremes ([0.746,0.967] vs [0.962,1.000]) though both approach the 0.96-0.97 range, suggesting a real but not enormous-margin separation at n=30 |
-| Is the lexical-gap magnitude (129.5% relative) statistically robust? | **No — n=5 is too small for a defensible magnitude claim; the direction (dense-containing configs far outperform BM25 on this slice) is corroborated by independent per-query failure-analysis examples, but the exact percentage should not be treated as precise** |
+| **Paired bootstrap result (final − BM25, nDCG@5, n=30, seed=42, 5000 resamples)** | **Observed mean delta = +0.1199. 95% CI = [0.0322, 0.2367]. CI does not include zero.** |
+| Is the full-test final-vs-BM25 improvement stable? | **The paired bootstrap interval for the held-out final-vs-BM25 nDCG@5 delta is entirely above zero on this 30-query test set.** This is the statistically appropriate statement given the paired design (both configs scored on the identical 30 queries); the earlier framing based on comparing the two configs' *separate* (unpaired) CIs — which do overlap, corrected above — is superseded by this paired result as the primary evidence for this claim. No claim beyond this dataset is made. |
+| Is the lexical-gap magnitude (129.5% relative) statistically robust? | **No — n=5 is too small for a defensible magnitude claim (and too small for any bootstrap CI, paired or unpaired, to be computed meaningfully); the direction (dense-containing configs far outperform BM25 on this slice) is corroborated by independent per-query failure-analysis examples, but the exact percentage should not be treated as precise** |
 
 ### J. Test / quality status
 
@@ -408,4 +430,98 @@ exist.**
 - [x] No code/config/data changes invalidated the frozen benchmark (only a documentation-prose
       correction was made; verified no result artifact needed regeneration)
 
-## PROJECT CLOSURE VERDICT: **READY TO FREEZE**
+---
+
+## FINAL CONSISTENCY CLEANUP
+
+Performed after this report's initial issue, in response to two internal-consistency checks. Both
+were verified against actual code/artifacts before anything was changed; neither required altering
+any frozen result.
+
+### 1. Ablation split resolution
+
+- **Exact split: validation. Exact n: 30.** (Not dev/n=90 — the earlier "n=90" in this report's
+  Part 2-E header was a transcription error.)
+- **Code evidence:** `scripts/run_ablations.py` line 43, `queries = queries_for_split("val")`; line
+  50, `config.split = "val"` — applied to every one of the 7 ablation configs.
+- **Artifact evidence:** `results/ablations/full.json` → `summary.query_count = 30` and
+  `len(rows) = 30`, matching `data/splits.json`'s validation count (30), not its dev count (90).
+- **Docs corrected:** `docs/FINAL_CLOSURE_REPORT.md` Part 2-E header and provenance note (this
+  document). No other document contained the error — `docs/BENCHMARK_REPORT.md` §12 already said
+  "validation" with no incorrect count attached.
+- **Usage clarification:** ablations were used for **post-hoc interpretation only** (which signals
+  matter), never for a tuning decision. Tuning decisions (fusion weight/method, whether to rerank)
+  were made separately and earlier in `scripts/optimize.py`, also on validation.
+- **No result numbers were altered** — only the split label/count in prose.
+
+### 2. Confidence-interval correction
+
+- The two **separate (unpaired)** bootstrap CIs — BM25 [0.7462, 0.9667] and Final [0.9619, 1.0000]
+  — **do overlap** (overlap region ≈ [0.9619, 0.9667]). Every place in this report that previously
+  implied non-overlap ("do not overlap," "disjoint at their extremes") has been corrected to state
+  the overlap plainly (Part 2-C and Part 2-I above).
+- No claim of statistical significance was ever derived from that (incorrect) non-overlap framing
+  in any other project document — `docs/BENCHMARK_REPORT.md` never made this claim and required no
+  change.
+
+### 3. Paired comparison (new this pass, purely observational)
+
+- **Checked first:** both `results/final/bm25_only.json` and `results/final/final_frozen.json`
+  already store per-query `ndcg_at_k` values under `rows`, keyed by the query text, for the
+  identical 30 held-out test queries in the identical order — verified programmatically before
+  computing anything.
+- **Because the existing frozen artifacts already contained everything needed, no rerun of any
+  ranking code was necessary or performed.** `scripts/paired_bootstrap_ci.py` (new, purely
+  observational — reads two existing JSON files, calls no retrieval/ranking/model code) computes
+  the paired bootstrap CI for the delta directly from those stored values.
+- **Method:** paired bootstrap, resampling the 30 (bm25_ndcg, final_ndcg) query pairs together with
+  replacement, 5000 resamples, seed=42.
+- **Result** (`results/final/paired_bootstrap_ndcg_delta.json`):
+  - Observed mean delta (final − BM25, nDCG@5): **+0.1199**
+  - 95% paired bootstrap CI: **[0.0322, 0.2367]**
+  - n = 30, seed = 42, n_boot = 5000
+  - **CI does not include zero → Case A applies.**
+- **Interpretation (Case A wording, as specified):** *"The paired bootstrap interval for the
+  held-out final-vs-BM25 nDCG@5 delta is entirely above zero on this 30-query test set."* No claim
+  beyond this dataset is made.
+
+### 4. Confirmation: nothing else changed
+
+During this cleanup pass, the following were **not** touched: the ranking model, any experiment
+config (including `final_frozen.json`), the 90/30/30 split, any feature, K, the dataset (documents
+or queries), which 30 queries constitute the test set, the lexical-gap definition or membership, or
+any optimization decision. The only additions were: (a) prose corrections in this report and in
+`docs/DATA_PROVENANCE.md` (from the prior pass), and (b) one new purely-observational script
+(`scripts/paired_bootstrap_ci.py`) plus its output artifact
+(`results/final/paired_bootstrap_ndcg_delta.json`), which reads existing frozen results and writes
+a new, additive analysis file — it does not modify or replace any existing result artifact.
+
+### 5. Final verification
+
+```
+pytest -q                                          -> 44 passed
+ruff check src tests loadtest dashboard scripts    -> All checks passed!
+git diff --stat                                    -> documentation files + 1 new script + 1 new
+                                                       analysis-output JSON; no source/config/data
+                                                       file affecting ranking behavior was modified
+```
+
+No code behavior, model, config, split, feature, K, dataset, test-query set, or optimization
+decision changed. `results/final/*.json` files for `bm25_only`/`final_frozen`/etc. are untouched;
+only a new sibling file (`paired_bootstrap_ndcg_delta.json`) was added alongside them.
+
+---
+
+## PROJECT FINAL FREEZE VERDICT: **READY TO FREEZE**
+
+- [x] Ablation split provenance is resolved (validation, n=30 — confirmed by code and artifact)
+- [x] Split name/count are correct everywhere (single transcription error found and fixed)
+- [x] CI-overlap wording is corrected (overlap acknowledged; non-overlap language removed)
+- [x] Paired uncertainty is computed (existing artifacts were sufficient — no rerun needed): 95% CI
+      [0.0322, 0.2367], entirely above zero, n=30, seed=42, 5000 resamples
+- [x] No tuning or methodology changed
+- [x] All previous final metrics remain intact (Task 6's list re-verified against source artifacts
+      during this pass, all values unchanged)
+- [x] 44/44 tests pass
+- [x] Ruff passes
+- [x] No unresolved documentation inconsistency remains

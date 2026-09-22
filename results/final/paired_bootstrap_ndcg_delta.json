@@ -1,0 +1,18 @@
+{
+  "method": "paired bootstrap, resampling query pairs with replacement",
+  "source_files": [
+    "results/final/bm25_only.json",
+    "results/final/final_frozen.json"
+  ],
+  "config_a": "bm25_only",
+  "config_b": "final_frozen",
+  "metric": "ndcg_at_k (nDCG@5)",
+  "split": "test",
+  "query_count": 30,
+  "seed": 42,
+  "n_boot": 5000,
+  "observed_mean_delta": 0.11986631402240659,
+  "ci_low": 0.032168655570024685,
+  "ci_high": 0.23671003618130967,
+  "includes_zero": false
+}
