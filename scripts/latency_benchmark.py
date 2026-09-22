@@ -35,7 +35,13 @@ from pathlib import Path
 import numpy as np
 
 from support_search import __name__ as _pkg  # noqa: F401 - ensures package import works
-from support_search.experiment import ExperimentConfig, build_engine_bundle, load_corpus, queries_for_split, score_query
+from support_search.experiment import (
+    ExperimentConfig,
+    build_engine_bundle,
+    load_corpus,
+    queries_for_split,
+    score_query,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "configs" / "experiments"

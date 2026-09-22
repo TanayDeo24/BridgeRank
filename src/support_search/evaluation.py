@@ -4,7 +4,7 @@ import math
 import statistics
 import time
 from collections import defaultdict
-from typing import Iterable
+from collections.abc import Iterable
 
 from .retrieval import HybridSearchEngine
 

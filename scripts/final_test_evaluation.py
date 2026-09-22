@@ -21,7 +21,13 @@ from pathlib import Path
 
 import numpy as np
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, log_to_mlflow, queries_for_split
+from support_search.experiment import (
+    ExperimentConfig,
+    evaluate_config,
+    load_corpus,
+    log_to_mlflow,
+    queries_for_split,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "configs" / "experiments"

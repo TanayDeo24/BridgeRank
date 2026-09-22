@@ -19,7 +19,6 @@ Provenance (see docs/DATA_PROVENANCE.md for the full disclosure):
   lexical-gap slice. About 40% of queries also carry one secondary
   relevant document (grade 1) mirroring the ratio in the original v1 set.
 """
-import hashlib
 import json
 from pathlib import Path
 

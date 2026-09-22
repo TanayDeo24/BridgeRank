@@ -15,13 +15,19 @@ import json
 import subprocess
 from pathlib import Path
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, log_to_mlflow, queries_for_split
+from support_search.experiment import (
+    ExperimentConfig,
+    evaluate_config,
+    load_corpus,
+    log_to_mlflow,
+    queries_for_split,
+)
 
 
 def git_commit() -> str:
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-    except Exception:
+    except Exception:  # noqa: BLE001 - git metadata is best-effort, never fatal
         return "unknown"
 
 

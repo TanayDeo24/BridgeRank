@@ -19,15 +19,15 @@ ST_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 CE_MODEL = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 LEARNED_MODEL_PATH = str(ROOT / "artifacts" / "models" / "learned_linear_v1.json")
 
-BASE = dict(
-    embedding_model=ST_MODEL,
-    index_type="flat",
-    candidate_k=50,
-    top_k=5,
-    normalization="minmax",
-    split="test",
-    git_commit="",
-)
+BASE = {
+    "embedding_model": ST_MODEL,
+    "index_type": "flat",
+    "candidate_k": 50,
+    "top_k": 5,
+    "normalization": "minmax",
+    "split": "test",
+    "git_commit": "",
+}
 
 CONFIGS = {
     # --- baselines (Section 11) ---

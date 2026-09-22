@@ -16,7 +16,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, queries_for_split
+from support_search.experiment import (
+    ExperimentConfig,
+    evaluate_config,
+    load_corpus,
+    queries_for_split,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "configs" / "experiments"

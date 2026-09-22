@@ -14,8 +14,6 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import numpy as np
-
 from support_search.embeddings import create_embedder
 from support_search.experiment import load_corpus, queries_for_split
 from support_search.features import FEATURE_REGISTRY, FeatureContext
@@ -38,7 +36,6 @@ def main(embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2") -> Non
         query = item["query"]
         bm25_scores = bm25.scores(query)
         dense_scores = dense.scores(query)
-        raw = {"bm25": bm25_scores, "dense": dense_scores}
         relevant_grades = item["relevance"]
         for i, doc in enumerate(documents):
             ctx = FeatureContext(

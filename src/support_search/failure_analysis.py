@@ -4,7 +4,6 @@ import json
 import os
 from pathlib import Path
 
-
 SYSTEM_PROMPT = """You are reviewing a semantic-search evaluation. Identify systematic failure
 patterns, distinguish lexical, semantic, corpus, and labeling problems, and propose prioritized,
 testable experiments. Never invent evidence. Return concise Markdown with Observations, Hypotheses,

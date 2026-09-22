@@ -27,7 +27,6 @@ Stage semantics (Section 15) are preserved explicitly:
 from __future__ import annotations
 
 import json
-import math
 import statistics
 import time
 from dataclasses import dataclass, field
@@ -91,11 +90,11 @@ class ExperimentConfig:
         }
 
     @classmethod
-    def from_dict(cls, raw: dict) -> "ExperimentConfig":
+    def from_dict(cls, raw: dict) -> ExperimentConfig:
         return cls(**{k: v for k, v in raw.items() if k in cls.__dataclass_fields__})
 
     @classmethod
-    def load(cls, path: Path) -> "ExperimentConfig":
+    def load(cls, path: Path) -> ExperimentConfig:
         return cls.from_dict(json.loads(Path(path).read_text(encoding="utf-8")))
 
 
@@ -108,7 +107,7 @@ class EngineBundle:
     learned_model: LogisticRankModel | None
 
 
-_BUNDLE_CACHE: dict[tuple[str, str], EngineBundle] = {}
+_BUNDLE_CACHE: dict[tuple[str, str, int], EngineBundle] = {}
 
 
 def build_engine_bundle(
@@ -116,7 +115,13 @@ def build_engine_bundle(
     config: ExperimentConfig,
     cache: bool = True,
 ) -> EngineBundle:
-    cache_key = (config.embedding_model, config.index_type)
+    # Hashing document ids (not id(documents)) makes the cache key correct
+    # even if two different document sets share the same embedding_model/
+    # index_type within one process (e.g. tests) -- a plain object-identity
+    # or (model, index_type)-only key would silently return the wrong
+    # corpus's index in that case.
+    doc_signature = hash(tuple(d.id for d in documents))
+    cache_key = (config.embedding_model, config.index_type, doc_signature)
     if cache and cache_key in _BUNDLE_CACHE:
         base = _BUNDLE_CACHE[cache_key]
     else:

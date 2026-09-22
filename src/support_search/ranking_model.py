@@ -16,7 +16,7 @@ dependency for a linear model with <10 features would be disproportionate
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
@@ -58,7 +58,7 @@ class LogisticRankModel:
         path.write_text(json.dumps(self.to_dict(), indent=2), encoding="utf-8")
 
     @classmethod
-    def load(cls, path: Path) -> "LogisticRankModel":
+    def load(cls, path: Path) -> LogisticRankModel:
         raw = json.loads(path.read_text(encoding="utf-8"))
         return cls(
             feature_names=raw["feature_names"],

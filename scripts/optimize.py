@@ -39,7 +39,12 @@ from pathlib import Path
 
 import numpy as np
 
-from support_search.experiment import ExperimentConfig, build_engine_bundle, evaluate_config, load_corpus, queries_for_split
+from support_search.experiment import (
+    ExperimentConfig,
+    evaluate_config,
+    load_corpus,
+    queries_for_split,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 ST_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
@@ -60,10 +65,10 @@ def run(config: ExperimentConfig, queries=None) -> dict:
 
 
 def main() -> None:
-    base = dict(embedding_model=ST_MODEL, index_type="flat", top_k=5, normalization="minmax", split="val")
+    base = {"embedding_model": ST_MODEL, "index_type": "flat", "top_k": 5, "normalization": "minmax", "split": "val"}
 
     # --- Step 1: alpha grid search ---
-    print("=== Step 1: alpha grid search (weighted_sum, val, n=%d) ===" % len(val_queries))
+    print(f"=== Step 1: alpha grid search (weighted_sum, val, n={len(val_queries)}) ===")
     best_alpha, best_ndcg = None, -1.0
     for alpha in [0.30, 0.40, 0.45, 0.50, 0.55, 0.60, 0.70]:
         cfg = ExperimentConfig(id=f"alpha_{alpha}", retrieval_features={"bm25": 1 - alpha, "dense": alpha}, fusion="weighted_sum", **base)
@@ -167,7 +172,7 @@ def main() -> None:
     bm25_cfg = ExperimentConfig(id="guardrail_bm25", retrieval_features={"bm25": 1.0, "dense": 0.0}, fusion="weighted_sum", **{**base, "split": "val"})
     bm25_gap_summary = run(bm25_cfg, val_gap_queries) if val_gap_queries else None
     final_gap_summary = run(final_cfg, val_gap_queries) if val_gap_queries else None
-    print("\n=== Guardrail: lexical-gap VAL slice (n=%d) ===" % len(val_gap_queries))
+    print(f"\n=== Guardrail: lexical-gap VAL slice (n={len(val_gap_queries)}) ===")
     if bm25_gap_summary:
         print(f"  bm25_only     ndcg@5={bm25_gap_summary['ndcg_at_k']:.4f}")
         print(f"  final_frozen  ndcg@5={final_gap_summary['ndcg_at_k']:.4f}")
@@ -178,7 +183,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "search_log.json").write_text(json.dumps(log, indent=2), encoding="utf-8")
     (ROOT / "configs" / "experiments" / "final_frozen.json").write_text(json.dumps(final_cfg.to_dict(), indent=2), encoding="utf-8")
-    print(f"\nfrozen config -> configs/experiments/final_frozen.json")
+    print("\nfrozen config -> configs/experiments/final_frozen.json")
     print(json.dumps(final_cfg.to_dict(), indent=2))
 
 

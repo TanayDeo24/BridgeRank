@@ -32,7 +32,12 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 
-from support_search.experiment import ExperimentConfig, evaluate_config, load_corpus, queries_for_split
+from support_search.experiment import (
+    ExperimentConfig,
+    evaluate_config,
+    load_corpus,
+    queries_for_split,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -40,7 +45,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def git_commit() -> str:
     try:
         return subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-    except Exception:
+    except Exception:  # noqa: BLE001 - git metadata is best-effort, never fatal
         return "unknown"
 
 
@@ -55,11 +60,17 @@ class RunOutcome:
 
 
 def _run_one(config_path: str, split: str, out_dir: str) -> RunOutcome:
-    """Top-level (picklable) worker function executed in a subprocess."""
+    """Top-level (picklable) worker function executed in a subprocess.
+
+    Everything, including config loading itself, is inside the try block:
+    a missing/malformed config file must surface as one failed row in the
+    comparison table, not crash the whole manifest (Section 29: "failed-
+    worker handling" is a tested property, not an assumption)."""
     started = time.perf_counter()
-    config = ExperimentConfig.load(Path(config_path))
-    config.split = split
+    config_id_for_error = Path(config_path).stem
     try:
+        config = ExperimentConfig.load(Path(config_path))
+        config.split = split
         documents = load_corpus()
         queries = queries_for_split(split)
         result = evaluate_config(config, documents, queries)
@@ -70,7 +81,7 @@ def _run_one(config_path: str, split: str, out_dir: str) -> RunOutcome:
         return RunOutcome(config.id, split, True, wall, None, result["summary"])
     except Exception as exc:  # noqa: BLE001 - a failed config run is a measured outcome
         wall = time.perf_counter() - started
-        return RunOutcome(config.id, split, False, wall, f"{type(exc).__name__}: {exc}", None)
+        return RunOutcome(config_id_for_error, split, False, wall, f"{type(exc).__name__}: {exc}", None)
 
 
 def run_manifest(config_paths: list[Path], split: str, workers: int, out_dir: Path) -> tuple[list[RunOutcome], float]:

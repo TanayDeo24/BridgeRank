@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import itertools
 import os
 from typing import Protocol
 
@@ -28,7 +29,7 @@ class HashingEmbedder:
         vectors = np.zeros((len(texts), self.dimension), dtype=np.float32)
         for row, text in enumerate(texts):
             tokens = tokenize(text)
-            features = tokens + [f"{a}_{b}" for a, b in zip(tokens, tokens[1:])]
+            features = tokens + [f"{a}_{b}" for a, b in itertools.pairwise(tokens)]
             for token in features:
                 digest = hashlib.blake2b(token.encode(), digest_size=8).digest()
                 value = int.from_bytes(digest, "little")

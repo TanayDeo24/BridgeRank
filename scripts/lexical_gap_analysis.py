@@ -83,7 +83,7 @@ def main() -> None:
             "mean": statistics.fmean(values),
         }
 
-    print("=== Candidate definitions, measured on DEV split (n=%d) ===" % len(dev_rows))
+    print(f"=== Candidate definitions, measured on DEV split (n={len(dev_rows)}) ===")
     for key in ("jaccard_body", "coverage_body", "coverage_title"):
         print(key, describe(key, dev_rows))
 

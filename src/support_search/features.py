@@ -20,7 +20,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass
 from datetime import date
-from typing import Protocol
+from typing import ClassVar, Protocol
 
 from .models import Document
 from .text import tokenize
@@ -118,7 +118,7 @@ class AuthorityFeature:
 
     name = "source_authority"
     stage = "retrieval"
-    weights = {"official": 1.0, "community": 0.5}
+    weights: ClassVar[dict[str, float]] = {"official": 1.0, "community": 0.5}
 
     def extract(self, ctx: FeatureContext) -> float:
         value = ctx.document.metadata.get("source_authority")
