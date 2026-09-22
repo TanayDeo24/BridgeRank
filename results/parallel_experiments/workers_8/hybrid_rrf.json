@@ -1,0 +1,525 @@
+{
+  "config": {
+    "id": "hybrid_rrf",
+    "description": "Same two retrieval signals, fused by reciprocal rank fusion instead of normalized weighted sum (Gate 4 alternative).",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "index_type": "flat",
+    "candidate_k": 50,
+    "rerank_depth": 0,
+    "top_k": 5,
+    "retrieval_features": {
+      "bm25": 1.0,
+      "dense": 1.0
+    },
+    "fusion": "reciprocal_rank_fusion",
+    "normalization": "minmax",
+    "reranker_model": null,
+    "rerank_weights": {
+      "retrieval_score": 0.0,
+      "cross_encoder": 1.0
+    },
+    "learned_model_path": null,
+    "seed": 42,
+    "split": "val",
+    "git_commit": ""
+  },
+  "summary": {
+    "precision_at_k": 0.2,
+    "recall_at_k": 0.9833333333333333,
+    "mrr": 0.9777777777777777,
+    "ndcg_at_k": 0.981955323545216,
+    "failed_query_rate": 0.0,
+    "error_rate": 0.0,
+    "query_count": 30,
+    "p50_latency_ms": 20.440417050849646,
+    "p95_latency_ms": 43.44437504187226,
+    "p50_retrieval_ms": 17.043542000465095,
+    "p95_retrieval_ms": 43.19208301603794,
+    "p50_feature_fusion_ms": 0.2882500411942601,
+    "p95_feature_fusion_ms": 4.086874949280173,
+    "p50_rerank_ms": 0.0,
+    "p95_rerank_ms": 0.0
+  },
+  "rows": [
+    {
+      "query": "weak wireless signal in the back office",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-002",
+        "kb-per-015",
+        "kb-per-001",
+        "kb-net-009",
+        "kb-net-001"
+      ]
+    },
+    {
+      "query": "can't reach internal sites by name but IP works fine",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_k": 0.45865970635647857,
+      "failed": false,
+      "retrieved": [
+        "kb-net-004",
+        "kb-sec-003",
+        "kb-net-005",
+        "kb-mob-011",
+        "kb-acc-014"
+      ]
+    },
+    {
+      "query": "wired connection shows connected but no internet",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-009",
+        "kb-net-012",
+        "kb-net-010",
+        "kb-net-003",
+        "kb-sto-010"
+      ]
+    },
+    {
+      "query": "can't remember my login password",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-001",
+        "kb-sof-013",
+        "kb-sec-013",
+        "kb-acc-008",
+        "kb-sec-009"
+      ]
+    },
+    {
+      "query": "new hire has a directory account but no access to anything",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-005",
+        "kb-acc-015",
+        "kb-sto-012",
+        "kb-acc-010",
+        "kb-acc-001"
+      ]
+    },
+    {
+      "query": "ended up with two duplicate accounts after an import",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-015",
+        "kb-acc-010",
+        "kb-sto-009",
+        "kb-sto-012",
+        "kb-sec-015"
+      ]
+    },
+    {
+      "query": "docked laptop doesn't detect the external screen",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-005",
+        "kb-har-014",
+        "kb-per-010",
+        "kb-har-010",
+        "kb-col-003"
+      ]
+    },
+    {
+      "query": "laptop fan is loud all the time",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-011",
+        "kb-har-002",
+        "kb-net-013",
+        "kb-col-008",
+        "kb-har-014"
+      ]
+    },
+    {
+      "query": "dark vertical stripe on the laptop screen",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-014",
+        "kb-col-008",
+        "kb-har-009",
+        "kb-col-002",
+        "kb-har-002"
+      ]
+    },
+    {
+      "query": "license key says invalid even though it's new",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-003",
+        "kb-sec-008",
+        "kb-sof-012",
+        "kb-har-007",
+        "kb-acc-008"
+      ]
+    },
+    {
+      "query": "browser is sluggish after installing an extension",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-005",
+        "kb-sof-004",
+        "kb-sto-011",
+        "kb-sof-013",
+        "kb-mob-001"
+      ]
+    },
+    {
+      "query": "printer driver disappeared after an os update",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-010",
+        "kb-per-002",
+        "kb-har-003",
+        "kb-acc-011",
+        "kb-per-012"
+      ]
+    },
+    {
+      "query": "restored backup is older than expected",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-005",
+        "kb-sto-004",
+        "kb-sto-008",
+        "kb-sof-011",
+        "kb-acc-002"
+      ]
+    },
+    {
+      "query": "file looks corrupted after a sync conflict",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-009",
+        "kb-sto-006",
+        "kb-sof-009",
+        "kb-sto-013",
+        "kb-sof-011"
+      ]
+    },
+    {
+      "query": "shared link expired way sooner than I set it",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-015",
+        "kb-sto-007",
+        "kb-sto-003",
+        "kb-mes-011",
+        "kb-per-013"
+      ]
+    },
+    {
+      "query": "meeting shows at the wrong time for one person",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-010",
+        "kb-mob-013",
+        "kb-col-009",
+        "kb-col-014",
+        "kb-col-001"
+      ]
+    },
+    {
+      "query": "chat history vanished after switching to a new laptop",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-012",
+        "kb-sec-008",
+        "kb-col-005",
+        "kb-sto-013",
+        "kb-sto-001"
+      ]
+    },
+    {
+      "query": "screen share is really laggy for the presenter",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-013",
+        "kb-col-002",
+        "kb-per-015",
+        "kb-mes-014",
+        "kb-sto-007"
+      ]
+    },
+    {
+      "query": "outgoing email takes forever to actually send",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-001",
+        "kb-acc-007",
+        "kb-mes-003",
+        "kb-mes-002",
+        "kb-mes-014"
+      ]
+    },
+    {
+      "query": "attachment disappears before the email arrives",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-004",
+        "kb-mes-014",
+        "kb-mes-001",
+        "kb-acc-007",
+        "kb-mob-014"
+      ]
+    },
+    {
+      "query": "emails with big attachments are always slow",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-014",
+        "kb-mes-004",
+        "kb-mob-014",
+        "kb-mes-006",
+        "kb-sto-006"
+      ]
+    },
+    {
+      "query": "got an alert about a sign-in I don't recognize",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-005",
+        "kb-acc-001",
+        "kb-acc-003",
+        "kb-acc-011",
+        "kb-sec-015"
+      ]
+    },
+    {
+      "query": "security training video won't mark itself as done",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-010",
+        "kb-sec-002",
+        "kb-sto-010",
+        "kb-net-011",
+        "kb-acc-012"
+      ]
+    },
+    {
+      "query": "laptop reboots in a loop after a security patch",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-014",
+        "kb-acc-012",
+        "kb-net-009",
+        "kb-sof-001",
+        "kb-sec-008"
+      ]
+    },
+    {
+      "query": "device enrollment freezes at the same step every time",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-003",
+        "kb-sof-008",
+        "kb-per-006",
+        "kb-acc-003",
+        "kb-mob-001"
+      ]
+    },
+    {
+      "query": "app on my phone never shows fresh data",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-004",
+        "kb-mob-006",
+        "kb-mob-008",
+        "kb-mob-002",
+        "kb-mob-001"
+      ]
+    },
+    {
+      "query": "work phone battery is dead every morning",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-009",
+        "kb-mob-002",
+        "kb-har-001",
+        "kb-mob-005",
+        "kb-per-014"
+      ]
+    },
+    {
+      "query": "label printer is printing at the wrong size",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-007",
+        "kb-per-009",
+        "kb-per-002",
+        "kb-per-012",
+        "kb-col-010"
+      ]
+    },
+    {
+      "query": "double sided printing jams every single time",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-009",
+        "kb-har-013",
+        "kb-mob-003",
+        "kb-mes-015",
+        "kb-col-010"
+      ]
+    },
+    {
+      "query": "new network printer isn't showing up on any computer",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-012",
+        "kb-per-002",
+        "kb-net-014",
+        "kb-har-004",
+        "kb-sof-010"
+      ]
+    }
+  ]
+}

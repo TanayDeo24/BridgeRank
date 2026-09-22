@@ -1,0 +1,37 @@
+{
+  "manifest": "configs/manifests/all.json",
+  "split": "val",
+  "git_commit": "8891167dcb2933ffd64d36394fa17b1df5648b66",
+  "cpu_count": 8,
+  "config_count": 14,
+  "runs": [
+    {
+      "workers": 1,
+      "wall_clock_s": 20.8875,
+      "configs_per_hour": 2412.93,
+      "failures": 0,
+      "speedup_vs_sequential": 1.0
+    },
+    {
+      "workers": 2,
+      "wall_clock_s": 16.5039,
+      "configs_per_hour": 3053.82,
+      "failures": 0,
+      "speedup_vs_sequential": 1.266
+    },
+    {
+      "workers": 4,
+      "wall_clock_s": 14.6056,
+      "configs_per_hour": 3450.73,
+      "failures": 0,
+      "speedup_vs_sequential": 1.43
+    },
+    {
+      "workers": 8,
+      "wall_clock_s": 22.5144,
+      "configs_per_hour": 2238.57,
+      "failures": 0,
+      "speedup_vs_sequential": 0.928
+    }
+  ]
+}

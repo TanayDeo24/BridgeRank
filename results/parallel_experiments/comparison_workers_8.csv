@@ -1,0 +1,15 @@
+config_id,split,success,wall_time_s,error,ndcg_at_k,mrr,precision_at_k,recall_at_k,failed_query_rate,p95_latency_ms
+bm25_only,val,True,16.7346,,0.9231,0.9083,0.1933,0.9667,0.0333,253.697
+cross_encoder_rerank,val,True,21.0642,,0.9655,0.9567,0.2,0.9833,0.0,722.2455
+dense_only,val,True,18.5816,,0.9903,1.0,0.2067,1.0,0.0,910.154
+full,val,True,17.9533,,0.9655,0.9567,0.2,0.9833,0.0,130.1473
+full_minus_cross_encoder,val,True,15.9078,,0.9838,0.9778,0.2067,1.0,0.0,254.8046
+full_minus_dense,val,True,21.1014,,0.9655,0.9567,0.2,0.9833,0.0,758.2718
+full_minus_freshness,val,True,21.0591,,0.9655,0.9567,0.2,0.9833,0.0,714.7403
+full_minus_lexical,val,True,17.9386,,0.9672,0.9567,0.2067,1.0,0.0,125.986
+full_minus_source_authority,val,True,3.9,,0.9655,0.9567,0.2,0.9833,0.0,116.918
+full_minus_title_overlap,val,True,3.6481,,0.9655,0.9567,0.2,0.9833,0.0,114.8547
+hashing_dense_only_ci,val,True,0.0543,,0.6175,0.5889,0.14,0.7,0.3,1.2129
+hybrid_learned,val,True,0.7388,,0.9477,0.9417,0.1933,0.9667,0.0333,42.6093
+hybrid_rrf,val,True,0.6727,,0.982,0.9778,0.2,0.9833,0.0,43.4444
+hybrid_weighted,val,True,0.5164,,0.9672,0.9556,0.2067,1.0,0.0,40.3768
