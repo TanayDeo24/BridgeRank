@@ -1,0 +1,38 @@
+{
+  "config_id": "cross_encoder_rerank",
+  "cold_start_s": 2.2395,
+  "sample_count": 300,
+  "warmup_requests": 15,
+  "concurrency": 1,
+  "hardware": {
+    "platform": "macOS-15.7.4-arm64-arm-64bit",
+    "processor": "arm",
+    "machine": "arm64",
+    "cpu_count_logical": 8
+  },
+  "software": {
+    "python": "3.12.7",
+    "torch": "2.14.0",
+    "sentence_transformers": "5.7.0",
+    "numpy": "2.5.3",
+    "faiss": "1.15.1"
+  },
+  "total_ms": {
+    "p50": 33.3078,
+    "p95": 36.9951,
+    "p99": 44.4954,
+    "mean": 33.7624
+  },
+  "retrieval_ms": {
+    "p50": 5.8823,
+    "p95": 6.7493
+  },
+  "feature_fusion_ms": {
+    "p50": 0.1865,
+    "p95": 0.2005
+  },
+  "rerank_ms": {
+    "p50": 27.181,
+    "p95": 30.7589
+  }
+}
