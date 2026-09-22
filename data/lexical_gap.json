@@ -1,0 +1,1516 @@
+{
+  "definition": "coverage_title",
+  "formula": "fraction of query content tokens (stopwords removed) that literally appear in the primary relevant document's TITLE",
+  "threshold": 0.29,
+  "threshold_derivation": "dev-split p25 of coverage_title = 0.2857, rounded to 0.29",
+  "frozen_before_comparing_systems": true,
+  "counts": {
+    "dev": 23,
+    "val": 3,
+    "test": 5
+  },
+  "membership": {
+    "wifi disconnects on just my laptop": false,
+    "weak wireless signal in the back office": false,
+    "vpn app won't connect at all": true,
+    "connected to vpn but can't reach shared drives": true,
+    "can't reach internal sites by name but IP works fine": true,
+    "intranet portal hangs but google works fine": false,
+    "brand new internal app gets blocked by security software": true,
+    "nothing loads through the office proxy": true,
+    "wired connection shows connected but no internet": false,
+    "internet feels way slower than what we pay for": true,
+    "calls stutter but downloads are fast": true,
+    "guest network shows up but never actually connects": false,
+    "vpn drops every single time I close the lid": false,
+    "home printer unreachable while vpn is on": false,
+    "remote workers get routed to a dead proxy": false,
+    "can't remember my login password": true,
+    "authenticator app codes keep getting rejected": false,
+    "locked out after too many wrong password tries": true,
+    "sso login just shows a blank screen": false,
+    "new hire has a directory account but no access to anything": false,
+    "profile photo won't change no matter what": true,
+    "never got the password reset email": false,
+    "system won't let me reuse an old password": true,
+    "lost access to a shared inbox for no reason": true,
+    "account got disabled right after my manager changed": false,
+    "fingerprint login broke after updating the OS": false,
+    "can't remember answers to my security questions anymore": false,
+    "kiosk computer logs me out constantly": false,
+    "federated login fails only on the phone app": false,
+    "ended up with two duplicate accounts after an import": false,
+    "laptop battery dies way faster than before": false,
+    "laptop is completely dead, won't power on": true,
+    "print jobs just sit in the queue forever": false,
+    "printouts look streaky and faded": false,
+    "docked laptop doesn't detect the external screen": false,
+    "monitor flickers at certain refresh rates": false,
+    "keyboard is typing the wrong letters": false,
+    "dock randomly drops every connected device": false,
+    "webcam looks really dark on video calls": false,
+    "external drive doesn't show up on the computer": false,
+    "laptop fan is loud all the time": false,
+    "second monitor stuck at a low resolution": false,
+    "trackpad registers one click as two": false,
+    "dark vertical stripe on the laptop screen": false,
+    "usb-c charging is painfully slow": false,
+    "app crashes the second it opens": true,
+    "update gets stuck partway through install": false,
+    "license key says invalid even though it's new": false,
+    "app forgot how to open its own file type": false,
+    "browser is sluggish after installing an extension": false,
+    "software works for me but not my coworker on the same pc": false,
+    "uninstall didn't fully remove the app, reinstall fails": true,
+    "program locks up only on really big files": true,
+    "one app crashes another whenever both run": true,
+    "printer driver disappeared after an os update": false,
+    "app settings look totally garbled now": true,
+    "license portal shows fewer seats than we bought": false,
+    "browser keeps nagging to save a password I already saved": false,
+    "app gets slower the longer it stays open": false,
+    "security policy is blocking a new app I just installed": false,
+    "need to revert a shared doc to before someone's edit": true,
+    "cloud storage is full and uploads are failing": false,
+    "shared folder permissions aren't matching what I set": false,
+    "backup job hasn't actually run in weeks": false,
+    "restored backup is older than expected": false,
+    "file has been stuck syncing forever": true,
+    "teammate can't open a file I shared with them": false,
+    "a file is gone from the trash": false,
+    "file looks corrupted after a sync conflict": false,
+    "big video upload keeps failing": false,
+    "storage usage numbers don't match what I see in the browser": false,
+    "lost access to a team drive after the owner left": false,
+    "offline edits never synced back up": true,
+    "can't delete a file because of a legal hold": false,
+    "shared link expired way sooner than I set it": false,
+    "everyone hears an echo of themselves on the call": true,
+    "screen share just shows a black window": false,
+    "calendar invite never reaches people outside the company": false,
+    "meeting recording isn't showing up anywhere": false,
+    "chat notifications quit showing up on my desktop": false,
+    "whiteboard drawings vanished after the meeting ended": false,
+    "breakout rooms won't auto-assign people": false,
+    "blur background option is greyed out on my laptop": false,
+    "some people on the call have no audio, others are fine": false,
+    "meeting shows at the wrong time for one person": false,
+    "meeting link works on desktop but not on my phone": false,
+    "chat history vanished after switching to a new laptop": false,
+    "screen share is really laggy for the presenter": false,
+    "poll answers are visible to everyone, should be host only": false,
+    "one occurrence of a recurring meeting vanished": false,
+    "outgoing email takes forever to actually send": false,
+    "real emails keep landing in spam": true,
+    "distribution list email doesn't reach everyone": false,
+    "attachment disappears before the email arrives": false,
+    "out of office reply doesn't fire for coworkers": true,
+    "every email to one specific company bounces": true,
+    "some folders came up empty after a mailbox move": false,
+    "calendar invites show the wrong person as organizer": false,
+    "email search only checks the folder I'm in": false,
+    "read receipts never come back even though it's turned on": false,
+    "sent mail from a shared inbox lands in my personal mailbox": false,
+    "mailbox rules quit running after I changed my password": false,
+    "new employee's signature doesn't match the template": false,
+    "emails with big attachments are always slow": true,
+    "vacation reply sends the same person multiple replies": false,
+    "got a phishing email, how do I report it": false,
+    "antivirus is flagging our own internal tool": false,
+    "internal site is blocked by an expired certificate warning": false,
+    "laptop failed a compliance check and lost access": false,
+    "got an alert about a sign-in I don't recognize": false,
+    "usb drive won't work on my work laptop": false,
+    "vpn client throws a certificate trust error since the update": false,
+    "encrypted file won't open after moving to a new laptop": false,
+    "got an mfa prompt I never triggered": true,
+    "security training video won't mark itself as done": false,
+    "personal firewall is blocking the company vpn": false,
+    "dlp policy is blocking a file transfer that should be fine": false,
+    "password manager won't autofill on one particular site": false,
+    "laptop reboots in a loop after a security patch": false,
+    "account recovery keeps asking for info I don't have anymore": true,
+    "work app crashes every time I open it since the update": false,
+    "stopped getting push notifications on my phone": false,
+    "device enrollment freezes at the same step every time": false,
+    "app on my phone never shows fresh data": false,
+    "work profile won't let me use the camera": false,
+    "work app asks for a pin instead of face unlock now": false,
+    "internal app install fails with a signature error": false,
+    "phone app logs me out every time it restarts": false,
+    "work phone battery is dead every morning": false,
+    "my managed phone got wiped out of nowhere": true,
+    "free internal app is asking me to pay in the app store": false,
+    "never get the two factor approval push on my phone": false,
+    "phone calendar shows meetings in the wrong timezone": false,
+    "email app won't sync big attachments on cellular": false,
+    "phone says non-compliant even though everything looks fine": true,
+    "wireless mouse cursor keeps jumping around": false,
+    "network printer shows offline even though it's on": false,
+    "double sided scans come out blank on the back": true,
+    "bluetooth headset connects but plays no sound": false,
+    "dock only charges my laptop with one specific cable": false,
+    "wireless keyboard and mouse both drop out together": false,
+    "label printer is printing at the wrong size": false,
+    "headset mic works in one app but not another": false,
+    "double sided printing jams every single time": false,
+    "external drive is much slower through the dock": false,
+    "both monitors flicker only when they're both plugged into the dock": false,
+    "new network printer isn't showing up on any computer": false,
+    "scan to network folder crashes the scanner software": false,
+    "dock's screens work but the usb ports are dead": false,
+    "wireless clicker skips slides randomly": false
+  },
+  "per_query_diagnostics": {
+    "wifi disconnects on just my laptop": {
+      "query": "wifi disconnects on just my laptop",
+      "category": "network",
+      "split": "test",
+      "target_doc": "kb-net-001",
+      "jaccard_body": 0.034482758620689655,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "weak wireless signal in the back office": {
+      "query": "weak wireless signal in the back office",
+      "category": "network",
+      "split": "val",
+      "target_doc": "kb-net-002",
+      "jaccard_body": 0.13333333333333333,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "vpn app won't connect at all": {
+      "query": "vpn app won't connect at all",
+      "category": "network",
+      "split": "test",
+      "target_doc": "kb-net-003",
+      "jaccard_body": 0.03125,
+      "coverage_body": 0.2,
+      "coverage_title": 0.2
+    },
+    "connected to vpn but can't reach shared drives": {
+      "query": "connected to vpn but can't reach shared drives",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-004",
+      "jaccard_body": 0.03333333333333333,
+      "coverage_body": 0.16666666666666666,
+      "coverage_title": 0.16666666666666666
+    },
+    "can't reach internal sites by name but IP works fine": {
+      "query": "can't reach internal sites by name but IP works fine",
+      "category": "network",
+      "split": "val",
+      "target_doc": "kb-net-005",
+      "jaccard_body": 0.038461538461538464,
+      "coverage_body": 0.1111111111111111,
+      "coverage_title": 0.1111111111111111
+    },
+    "intranet portal hangs but google works fine": {
+      "query": "intranet portal hangs but google works fine",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-006",
+      "jaccard_body": 0.06666666666666667,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "brand new internal app gets blocked by security software": {
+      "query": "brand new internal app gets blocked by security software",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-007",
+      "jaccard_body": 0.030303030303030304,
+      "coverage_body": 0.1111111111111111,
+      "coverage_title": 0.1111111111111111
+    },
+    "nothing loads through the office proxy": {
+      "query": "nothing loads through the office proxy",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-008",
+      "jaccard_body": 0.03571428571428571,
+      "coverage_body": 0.2,
+      "coverage_title": 0.2
+    },
+    "wired connection shows connected but no internet": {
+      "query": "wired connection shows connected but no internet",
+      "category": "network",
+      "split": "val",
+      "target_doc": "kb-net-009",
+      "jaccard_body": 0.08333333333333333,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "internet feels way slower than what we pay for": {
+      "query": "internet feels way slower than what we pay for",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-010",
+      "jaccard_body": 0.0,
+      "coverage_body": 0.0,
+      "coverage_title": 0.0
+    },
+    "calls stutter but downloads are fast": {
+      "query": "calls stutter but downloads are fast",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-011",
+      "jaccard_body": 0.03333333333333333,
+      "coverage_body": 0.25,
+      "coverage_title": 0.25
+    },
+    "guest network shows up but never actually connects": {
+      "query": "guest network shows up but never actually connects",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-012",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "vpn drops every single time I close the lid": {
+      "query": "vpn drops every single time I close the lid",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-013",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.42857142857142855,
+      "coverage_title": 0.42857142857142855
+    },
+    "home printer unreachable while vpn is on": {
+      "query": "home printer unreachable while vpn is on",
+      "category": "network",
+      "split": "test",
+      "target_doc": "kb-net-014",
+      "jaccard_body": 0.2,
+      "coverage_body": 1.0,
+      "coverage_title": 0.6
+    },
+    "remote workers get routed to a dead proxy": {
+      "query": "remote workers get routed to a dead proxy",
+      "category": "network",
+      "split": "dev",
+      "target_doc": "kb-net-015",
+      "jaccard_body": 0.13333333333333333,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.3333333333333333
+    },
+    "can't remember my login password": {
+      "query": "can't remember my login password",
+      "category": "account",
+      "split": "val",
+      "target_doc": "kb-acc-001",
+      "jaccard_body": 0.041666666666666664,
+      "coverage_body": 0.25,
+      "coverage_title": 0.25
+    },
+    "authenticator app codes keep getting rejected": {
+      "query": "authenticator app codes keep getting rejected",
+      "category": "account",
+      "split": "test",
+      "target_doc": "kb-acc-002",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.3333333333333333
+    },
+    "locked out after too many wrong password tries": {
+      "query": "locked out after too many wrong password tries",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-003",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.5,
+      "coverage_title": 0.25
+    },
+    "sso login just shows a blank screen": {
+      "query": "sso login just shows a blank screen",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-004",
+      "jaccard_body": 0.10714285714285714,
+      "coverage_body": 0.6,
+      "coverage_title": 0.4
+    },
+    "new hire has a directory account but no access to anything": {
+      "query": "new hire has a directory account but no access to anything",
+      "category": "account",
+      "split": "val",
+      "target_doc": "kb-acc-005",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "profile photo won't change no matter what": {
+      "query": "profile photo won't change no matter what",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-006",
+      "jaccard_body": 0.034482758620689655,
+      "coverage_body": 0.16666666666666666,
+      "coverage_title": 0.16666666666666666
+    },
+    "never got the password reset email": {
+      "query": "never got the password reset email",
+      "category": "account",
+      "split": "test",
+      "target_doc": "kb-acc-007",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "system won't let me reuse an old password": {
+      "query": "system won't let me reuse an old password",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-008",
+      "jaccard_body": 0.0625,
+      "coverage_body": 0.2857142857142857,
+      "coverage_title": 0.14285714285714285
+    },
+    "lost access to a shared inbox for no reason": {
+      "query": "lost access to a shared inbox for no reason",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-009",
+      "jaccard_body": 0.07407407407407407,
+      "coverage_body": 0.4,
+      "coverage_title": 0.2
+    },
+    "account got disabled right after my manager changed": {
+      "query": "account got disabled right after my manager changed",
+      "category": "account",
+      "split": "test",
+      "target_doc": "kb-acc-010",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "fingerprint login broke after updating the OS": {
+      "query": "fingerprint login broke after updating the OS",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-011",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.5
+    },
+    "can't remember answers to my security questions anymore": {
+      "query": "can't remember answers to my security questions anymore",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-012",
+      "jaccard_body": 0.13636363636363635,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "kiosk computer logs me out constantly": {
+      "query": "kiosk computer logs me out constantly",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-013",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "federated login fails only on the phone app": {
+      "query": "federated login fails only on the phone app",
+      "category": "account",
+      "split": "dev",
+      "target_doc": "kb-acc-014",
+      "jaccard_body": 0.10714285714285714,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "ended up with two duplicate accounts after an import": {
+      "query": "ended up with two duplicate accounts after an import",
+      "category": "account",
+      "split": "val",
+      "target_doc": "kb-acc-015",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "laptop battery dies way faster than before": {
+      "query": "laptop battery dies way faster than before",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-001",
+      "jaccard_body": 0.12121212121212122,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "laptop is completely dead, won't power on": {
+      "query": "laptop is completely dead, won't power on",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-002",
+      "jaccard_body": 0.06451612903225806,
+      "coverage_body": 0.4,
+      "coverage_title": 0.2
+    },
+    "print jobs just sit in the queue forever": {
+      "query": "print jobs just sit in the queue forever",
+      "category": "hardware",
+      "split": "test",
+      "target_doc": "kb-har-003",
+      "jaccard_body": 0.18181818181818182,
+      "coverage_body": 0.8,
+      "coverage_title": 0.4
+    },
+    "printouts look streaky and faded": {
+      "query": "printouts look streaky and faded",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-004",
+      "jaccard_body": 0.07407407407407407,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "docked laptop doesn't detect the external screen": {
+      "query": "docked laptop doesn't detect the external screen",
+      "category": "hardware",
+      "split": "val",
+      "target_doc": "kb-har-005",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "monitor flickers at certain refresh rates": {
+      "query": "monitor flickers at certain refresh rates",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-006",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "keyboard is typing the wrong letters": {
+      "query": "keyboard is typing the wrong letters",
+      "category": "hardware",
+      "split": "test",
+      "target_doc": "kb-har-007",
+      "jaccard_body": 0.07692307692307693,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "dock randomly drops every connected device": {
+      "query": "dock randomly drops every connected device",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-008",
+      "jaccard_body": 0.0967741935483871,
+      "coverage_body": 0.5,
+      "coverage_title": 0.3333333333333333
+    },
+    "webcam looks really dark on video calls": {
+      "query": "webcam looks really dark on video calls",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-009",
+      "jaccard_body": 0.1,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "external drive doesn't show up on the computer": {
+      "query": "external drive doesn't show up on the computer",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-010",
+      "jaccard_body": 0.06666666666666667,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "laptop fan is loud all the time": {
+      "query": "laptop fan is loud all the time",
+      "category": "hardware",
+      "split": "val",
+      "target_doc": "kb-har-011",
+      "jaccard_body": 0.10344827586206896,
+      "coverage_body": 0.6,
+      "coverage_title": 0.4
+    },
+    "second monitor stuck at a low resolution": {
+      "query": "second monitor stuck at a low resolution",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-012",
+      "jaccard_body": 0.17391304347826086,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "trackpad registers one click as two": {
+      "query": "trackpad registers one click as two",
+      "category": "hardware",
+      "split": "test",
+      "target_doc": "kb-har-013",
+      "jaccard_body": 0.07142857142857142,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "dark vertical stripe on the laptop screen": {
+      "query": "dark vertical stripe on the laptop screen",
+      "category": "hardware",
+      "split": "val",
+      "target_doc": "kb-har-014",
+      "jaccard_body": 0.12,
+      "coverage_body": 0.6,
+      "coverage_title": 0.6
+    },
+    "usb-c charging is painfully slow": {
+      "query": "usb-c charging is painfully slow",
+      "category": "hardware",
+      "split": "dev",
+      "target_doc": "kb-har-015",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.75,
+      "coverage_title": 0.75
+    },
+    "app crashes the second it opens": {
+      "query": "app crashes the second it opens",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-001",
+      "jaccard_body": 0.038461538461538464,
+      "coverage_body": 0.25,
+      "coverage_title": 0.25
+    },
+    "update gets stuck partway through install": {
+      "query": "update gets stuck partway through install",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-002",
+      "jaccard_body": 0.16666666666666666,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.5
+    },
+    "license key says invalid even though it's new": {
+      "query": "license key says invalid even though it's new",
+      "category": "software",
+      "split": "val",
+      "target_doc": "kb-sof-003",
+      "jaccard_body": 0.13333333333333333,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "app forgot how to open its own file type": {
+      "query": "app forgot how to open its own file type",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-004",
+      "jaccard_body": 0.17391304347826086,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "browser is sluggish after installing an extension": {
+      "query": "browser is sluggish after installing an extension",
+      "category": "software",
+      "split": "val",
+      "target_doc": "kb-sof-005",
+      "jaccard_body": 0.08,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "software works for me but not my coworker on the same pc": {
+      "query": "software works for me but not my coworker on the same pc",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-006",
+      "jaccard_body": 0.07142857142857142,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "uninstall didn't fully remove the app, reinstall fails": {
+      "query": "uninstall didn't fully remove the app, reinstall fails",
+      "category": "software",
+      "split": "test",
+      "target_doc": "kb-sof-007",
+      "jaccard_body": 0.03125,
+      "coverage_body": 0.14285714285714285,
+      "coverage_title": 0.14285714285714285
+    },
+    "program locks up only on really big files": {
+      "query": "program locks up only on really big files",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-008",
+      "jaccard_body": 0.07142857142857142,
+      "coverage_body": 0.2857142857142857,
+      "coverage_title": 0.2857142857142857
+    },
+    "one app crashes another whenever both run": {
+      "query": "one app crashes another whenever both run",
+      "category": "software",
+      "split": "test",
+      "target_doc": "kb-sof-009",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.42857142857142855,
+      "coverage_title": 0.2857142857142857
+    },
+    "printer driver disappeared after an os update": {
+      "query": "printer driver disappeared after an os update",
+      "category": "software",
+      "split": "val",
+      "target_doc": "kb-sof-010",
+      "jaccard_body": 0.2,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.5
+    },
+    "app settings look totally garbled now": {
+      "query": "app settings look totally garbled now",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-011",
+      "jaccard_body": 0.037037037037037035,
+      "coverage_body": 0.16666666666666666,
+      "coverage_title": 0.16666666666666666
+    },
+    "license portal shows fewer seats than we bought": {
+      "query": "license portal shows fewer seats than we bought",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-012",
+      "jaccard_body": 0.19230769230769232,
+      "coverage_body": 0.625,
+      "coverage_title": 0.5
+    },
+    "browser keeps nagging to save a password I already saved": {
+      "query": "browser keeps nagging to save a password I already saved",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-013",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "app gets slower the longer it stays open": {
+      "query": "app gets slower the longer it stays open",
+      "category": "software",
+      "split": "dev",
+      "target_doc": "kb-sof-014",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "security policy is blocking a new app I just installed": {
+      "query": "security policy is blocking a new app I just installed",
+      "category": "software",
+      "split": "test",
+      "target_doc": "kb-sof-015",
+      "jaccard_body": 0.12,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "need to revert a shared doc to before someone's edit": {
+      "query": "need to revert a shared doc to before someone's edit",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-001",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.2857142857142857
+    },
+    "cloud storage is full and uploads are failing": {
+      "query": "cloud storage is full and uploads are failing",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-002",
+      "jaccard_body": 0.10344827586206896,
+      "coverage_body": 0.6,
+      "coverage_title": 0.6
+    },
+    "shared folder permissions aren't matching what I set": {
+      "query": "shared folder permissions aren't matching what I set",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-003",
+      "jaccard_body": 0.18181818181818182,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "backup job hasn't actually run in weeks": {
+      "query": "backup job hasn't actually run in weeks",
+      "category": "storage",
+      "split": "test",
+      "target_doc": "kb-sto-004",
+      "jaccard_body": 0.1111111111111111,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "restored backup is older than expected": {
+      "query": "restored backup is older than expected",
+      "category": "storage",
+      "split": "val",
+      "target_doc": "kb-sto-005",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "file has been stuck syncing forever": {
+      "query": "file has been stuck syncing forever",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-006",
+      "jaccard_body": 0.10714285714285714,
+      "coverage_body": 0.75,
+      "coverage_title": 0.25
+    },
+    "teammate can't open a file I shared with them": {
+      "query": "teammate can't open a file I shared with them",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-007",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "a file is gone from the trash": {
+      "query": "a file is gone from the trash",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-008",
+      "jaccard_body": 0.12,
+      "coverage_body": 0.75,
+      "coverage_title": 0.75
+    },
+    "file looks corrupted after a sync conflict": {
+      "query": "file looks corrupted after a sync conflict",
+      "category": "storage",
+      "split": "val",
+      "target_doc": "kb-sto-009",
+      "jaccard_body": 0.19230769230769232,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "big video upload keeps failing": {
+      "query": "big video upload keeps failing",
+      "category": "storage",
+      "split": "test",
+      "target_doc": "kb-sto-010",
+      "jaccard_body": 0.0625,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "storage usage numbers don't match what I see in the browser": {
+      "query": "storage usage numbers don't match what I see in the browser",
+      "category": "storage",
+      "split": "test",
+      "target_doc": "kb-sto-011",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "lost access to a team drive after the owner left": {
+      "query": "lost access to a team drive after the owner left",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-012",
+      "jaccard_body": 0.3333333333333333,
+      "coverage_body": 1.0,
+      "coverage_title": 1.0
+    },
+    "offline edits never synced back up": {
+      "query": "offline edits never synced back up",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-013",
+      "jaccard_body": 0.07142857142857142,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.16666666666666666
+    },
+    "can't delete a file because of a legal hold": {
+      "query": "can't delete a file because of a legal hold",
+      "category": "storage",
+      "split": "dev",
+      "target_doc": "kb-sto-014",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "shared link expired way sooner than I set it": {
+      "query": "shared link expired way sooner than I set it",
+      "category": "storage",
+      "split": "val",
+      "target_doc": "kb-sto-015",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.42857142857142855,
+      "coverage_title": 0.42857142857142855
+    },
+    "everyone hears an echo of themselves on the call": {
+      "query": "everyone hears an echo of themselves on the call",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-001",
+      "jaccard_body": 0.03125,
+      "coverage_body": 0.2,
+      "coverage_title": 0.2
+    },
+    "screen share just shows a black window": {
+      "query": "screen share just shows a black window",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-002",
+      "jaccard_body": 0.21739130434782608,
+      "coverage_body": 1.0,
+      "coverage_title": 0.8
+    },
+    "calendar invite never reaches people outside the company": {
+      "query": "calendar invite never reaches people outside the company",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-003",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.42857142857142855,
+      "coverage_title": 0.42857142857142855
+    },
+    "meeting recording isn't showing up anywhere": {
+      "query": "meeting recording isn't showing up anywhere",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-004",
+      "jaccard_body": 0.10344827586206896,
+      "coverage_body": 0.5,
+      "coverage_title": 0.3333333333333333
+    },
+    "chat notifications quit showing up on my desktop": {
+      "query": "chat notifications quit showing up on my desktop",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-005",
+      "jaccard_body": 0.12,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "whiteboard drawings vanished after the meeting ended": {
+      "query": "whiteboard drawings vanished after the meeting ended",
+      "category": "collaboration",
+      "split": "test",
+      "target_doc": "kb-col-006",
+      "jaccard_body": 0.13043478260869565,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "breakout rooms won't auto-assign people": {
+      "query": "breakout rooms won't auto-assign people",
+      "category": "collaboration",
+      "split": "test",
+      "target_doc": "kb-col-007",
+      "jaccard_body": 0.08333333333333333,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "blur background option is greyed out on my laptop": {
+      "query": "blur background option is greyed out on my laptop",
+      "category": "collaboration",
+      "split": "test",
+      "target_doc": "kb-col-008",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "some people on the call have no audio, others are fine": {
+      "query": "some people on the call have no audio, others are fine",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-009",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "meeting shows at the wrong time for one person": {
+      "query": "meeting shows at the wrong time for one person",
+      "category": "collaboration",
+      "split": "val",
+      "target_doc": "kb-col-010",
+      "jaccard_body": 0.20833333333333334,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "meeting link works on desktop but not on my phone": {
+      "query": "meeting link works on desktop but not on my phone",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-011",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "chat history vanished after switching to a new laptop": {
+      "query": "chat history vanished after switching to a new laptop",
+      "category": "collaboration",
+      "split": "val",
+      "target_doc": "kb-col-012",
+      "jaccard_body": 0.19230769230769232,
+      "coverage_body": 0.7142857142857143,
+      "coverage_title": 0.5714285714285714
+    },
+    "screen share is really laggy for the presenter": {
+      "query": "screen share is really laggy for the presenter",
+      "category": "collaboration",
+      "split": "val",
+      "target_doc": "kb-col-013",
+      "jaccard_body": 0.06896551724137931,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "poll answers are visible to everyone, should be host only": {
+      "query": "poll answers are visible to everyone, should be host only",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-014",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "one occurrence of a recurring meeting vanished": {
+      "query": "one occurrence of a recurring meeting vanished",
+      "category": "collaboration",
+      "split": "dev",
+      "target_doc": "kb-col-015",
+      "jaccard_body": 0.16666666666666666,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "outgoing email takes forever to actually send": {
+      "query": "outgoing email takes forever to actually send",
+      "category": "messaging",
+      "split": "val",
+      "target_doc": "kb-mes-001",
+      "jaccard_body": 0.07142857142857142,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "real emails keep landing in spam": {
+      "query": "real emails keep landing in spam",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-002",
+      "jaccard_body": 0.03571428571428571,
+      "coverage_body": 0.2,
+      "coverage_title": 0.2
+    },
+    "distribution list email doesn't reach everyone": {
+      "query": "distribution list email doesn't reach everyone",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-003",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "attachment disappears before the email arrives": {
+      "query": "attachment disappears before the email arrives",
+      "category": "messaging",
+      "split": "val",
+      "target_doc": "kb-mes-004",
+      "jaccard_body": 0.12,
+      "coverage_body": 0.6,
+      "coverage_title": 0.6
+    },
+    "out of office reply doesn't fire for coworkers": {
+      "query": "out of office reply doesn't fire for coworkers",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-005",
+      "jaccard_body": 0.07407407407407407,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.16666666666666666
+    },
+    "every email to one specific company bounces": {
+      "query": "every email to one specific company bounces",
+      "category": "messaging",
+      "split": "test",
+      "target_doc": "kb-mes-006",
+      "jaccard_body": 0.06896551724137931,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.16666666666666666
+    },
+    "some folders came up empty after a mailbox move": {
+      "query": "some folders came up empty after a mailbox move",
+      "category": "messaging",
+      "split": "test",
+      "target_doc": "kb-mes-007",
+      "jaccard_body": 0.12903225806451613,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "calendar invites show the wrong person as organizer": {
+      "query": "calendar invites show the wrong person as organizer",
+      "category": "messaging",
+      "split": "test",
+      "target_doc": "kb-mes-008",
+      "jaccard_body": 0.2,
+      "coverage_body": 0.7142857142857143,
+      "coverage_title": 0.7142857142857143
+    },
+    "email search only checks the folder I'm in": {
+      "query": "email search only checks the folder I'm in",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-009",
+      "jaccard_body": 0.17391304347826086,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "read receipts never come back even though it's turned on": {
+      "query": "read receipts never come back even though it's turned on",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-010",
+      "jaccard_body": 0.10344827586206896,
+      "coverage_body": 0.375,
+      "coverage_title": 0.375
+    },
+    "sent mail from a shared inbox lands in my personal mailbox": {
+      "query": "sent mail from a shared inbox lands in my personal mailbox",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-011",
+      "jaccard_body": 0.16666666666666666,
+      "coverage_body": 0.5,
+      "coverage_title": 0.375
+    },
+    "mailbox rules quit running after I changed my password": {
+      "query": "mailbox rules quit running after I changed my password",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-012",
+      "jaccard_body": 0.21739130434782608,
+      "coverage_body": 0.7142857142857143,
+      "coverage_title": 0.5714285714285714
+    },
+    "new employee's signature doesn't match the template": {
+      "query": "new employee's signature doesn't match the template",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-013",
+      "jaccard_body": 0.20833333333333334,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "emails with big attachments are always slow": {
+      "query": "emails with big attachments are always slow",
+      "category": "messaging",
+      "split": "val",
+      "target_doc": "kb-mes-014",
+      "jaccard_body": 0.03571428571428571,
+      "coverage_body": 0.2,
+      "coverage_title": 0.2
+    },
+    "vacation reply sends the same person multiple replies": {
+      "query": "vacation reply sends the same person multiple replies",
+      "category": "messaging",
+      "split": "dev",
+      "target_doc": "kb-mes-015",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "got a phishing email, how do I report it": {
+      "query": "got a phishing email, how do I report it",
+      "category": "security",
+      "split": "test",
+      "target_doc": "kb-sec-001",
+      "jaccard_body": 0.08333333333333333,
+      "coverage_body": 0.4,
+      "coverage_title": 0.4
+    },
+    "antivirus is flagging our own internal tool": {
+      "query": "antivirus is flagging our own internal tool",
+      "category": "security",
+      "split": "test",
+      "target_doc": "kb-sec-002",
+      "jaccard_body": 0.06666666666666667,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "internal site is blocked by an expired certificate warning": {
+      "query": "internal site is blocked by an expired certificate warning",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-003",
+      "jaccard_body": 0.20833333333333334,
+      "coverage_body": 0.7142857142857143,
+      "coverage_title": 0.5714285714285714
+    },
+    "laptop failed a compliance check and lost access": {
+      "query": "laptop failed a compliance check and lost access",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-004",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.5
+    },
+    "got an alert about a sign-in I don't recognize": {
+      "query": "got an alert about a sign-in I don't recognize",
+      "category": "security",
+      "split": "val",
+      "target_doc": "kb-sec-005",
+      "jaccard_body": 0.07692307692307693,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "usb drive won't work on my work laptop": {
+      "query": "usb drive won't work on my work laptop",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-006",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "vpn client throws a certificate trust error since the update": {
+      "query": "vpn client throws a certificate trust error since the update",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-007",
+      "jaccard_body": 0.25,
+      "coverage_body": 0.75,
+      "coverage_title": 0.75
+    },
+    "encrypted file won't open after moving to a new laptop": {
+      "query": "encrypted file won't open after moving to a new laptop",
+      "category": "security",
+      "split": "test",
+      "target_doc": "kb-sec-008",
+      "jaccard_body": 0.2,
+      "coverage_body": 0.625,
+      "coverage_title": 0.625
+    },
+    "got an mfa prompt I never triggered": {
+      "query": "got an mfa prompt I never triggered",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-009",
+      "jaccard_body": 0.09523809523809523,
+      "coverage_body": 0.4,
+      "coverage_title": 0.2
+    },
+    "security training video won't mark itself as done": {
+      "query": "security training video won't mark itself as done",
+      "category": "security",
+      "split": "val",
+      "target_doc": "kb-sec-010",
+      "jaccard_body": 0.16666666666666666,
+      "coverage_body": 0.625,
+      "coverage_title": 0.5
+    },
+    "personal firewall is blocking the company vpn": {
+      "query": "personal firewall is blocking the company vpn",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-011",
+      "jaccard_body": 0.17647058823529413,
+      "coverage_body": 0.6,
+      "coverage_title": 0.6
+    },
+    "dlp policy is blocking a file transfer that should be fine": {
+      "query": "dlp policy is blocking a file transfer that should be fine",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-012",
+      "jaccard_body": 0.125,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "password manager won't autofill on one particular site": {
+      "query": "password manager won't autofill on one particular site",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-013",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.42857142857142855
+    },
+    "laptop reboots in a loop after a security patch": {
+      "query": "laptop reboots in a loop after a security patch",
+      "category": "security",
+      "split": "val",
+      "target_doc": "kb-sec-014",
+      "jaccard_body": 0.11538461538461539,
+      "coverage_body": 0.5,
+      "coverage_title": 0.5
+    },
+    "account recovery keeps asking for info I don't have anymore": {
+      "query": "account recovery keeps asking for info I don't have anymore",
+      "category": "security",
+      "split": "dev",
+      "target_doc": "kb-sec-015",
+      "jaccard_body": 0.06451612903225806,
+      "coverage_body": 0.2857142857142857,
+      "coverage_title": 0.2857142857142857
+    },
+    "work app crashes every time I open it since the update": {
+      "query": "work app crashes every time I open it since the update",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-001",
+      "jaccard_body": 0.21428571428571427,
+      "coverage_body": 0.75,
+      "coverage_title": 0.625
+    },
+    "stopped getting push notifications on my phone": {
+      "query": "stopped getting push notifications on my phone",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-002",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "device enrollment freezes at the same step every time": {
+      "query": "device enrollment freezes at the same step every time",
+      "category": "mobile",
+      "split": "val",
+      "target_doc": "kb-mob-003",
+      "jaccard_body": 0.23076923076923078,
+      "coverage_body": 0.8571428571428571,
+      "coverage_title": 0.8571428571428571
+    },
+    "app on my phone never shows fresh data": {
+      "query": "app on my phone never shows fresh data",
+      "category": "mobile",
+      "split": "val",
+      "target_doc": "kb-mob-004",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "work profile won't let me use the camera": {
+      "query": "work profile won't let me use the camera",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-005",
+      "jaccard_body": 0.13043478260869565,
+      "coverage_body": 0.42857142857142855,
+      "coverage_title": 0.42857142857142855
+    },
+    "work app asks for a pin instead of face unlock now": {
+      "query": "work app asks for a pin instead of face unlock now",
+      "category": "mobile",
+      "split": "test",
+      "target_doc": "kb-mob-006",
+      "jaccard_body": 0.17857142857142858,
+      "coverage_body": 0.625,
+      "coverage_title": 0.5
+    },
+    "internal app install fails with a signature error": {
+      "query": "internal app install fails with a signature error",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-007",
+      "jaccard_body": 0.3157894736842105,
+      "coverage_body": 1.0,
+      "coverage_title": 1.0
+    },
+    "phone app logs me out every time it restarts": {
+      "query": "phone app logs me out every time it restarts",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-008",
+      "jaccard_body": 0.2413793103448276,
+      "coverage_body": 0.875,
+      "coverage_title": 0.875
+    },
+    "work phone battery is dead every morning": {
+      "query": "work phone battery is dead every morning",
+      "category": "mobile",
+      "split": "val",
+      "target_doc": "kb-mob-009",
+      "jaccard_body": 0.07407407407407407,
+      "coverage_body": 0.3333333333333333,
+      "coverage_title": 0.3333333333333333
+    },
+    "my managed phone got wiped out of nowhere": {
+      "query": "my managed phone got wiped out of nowhere",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-010",
+      "jaccard_body": 0.037037037037037035,
+      "coverage_body": 0.16666666666666666,
+      "coverage_title": 0.16666666666666666
+    },
+    "free internal app is asking me to pay in the app store": {
+      "query": "free internal app is asking me to pay in the app store",
+      "category": "mobile",
+      "split": "test",
+      "target_doc": "kb-mob-011",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "never get the two factor approval push on my phone": {
+      "query": "never get the two factor approval push on my phone",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-012",
+      "jaccard_body": 0.16,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "phone calendar shows meetings in the wrong timezone": {
+      "query": "phone calendar shows meetings in the wrong timezone",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-013",
+      "jaccard_body": 0.17391304347826086,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "email app won't sync big attachments on cellular": {
+      "query": "email app won't sync big attachments on cellular",
+      "category": "mobile",
+      "split": "dev",
+      "target_doc": "kb-mob-014",
+      "jaccard_body": 0.22727272727272727,
+      "coverage_body": 0.7142857142857143,
+      "coverage_title": 0.7142857142857143
+    },
+    "phone says non-compliant even though everything looks fine": {
+      "query": "phone says non-compliant even though everything looks fine",
+      "category": "mobile",
+      "split": "test",
+      "target_doc": "kb-mob-015",
+      "jaccard_body": 0.02702702702702703,
+      "coverage_body": 0.14285714285714285,
+      "coverage_title": 0.14285714285714285
+    },
+    "wireless mouse cursor keeps jumping around": {
+      "query": "wireless mouse cursor keeps jumping around",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-001",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.5
+    },
+    "network printer shows offline even though it's on": {
+      "query": "network printer shows offline even though it's on",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-002",
+      "jaccard_body": 0.21739130434782608,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "double sided scans come out blank on the back": {
+      "query": "double sided scans come out blank on the back",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-003",
+      "jaccard_body": 0.037037037037037035,
+      "coverage_body": 0.14285714285714285,
+      "coverage_title": 0.14285714285714285
+    },
+    "bluetooth headset connects but plays no sound": {
+      "query": "bluetooth headset connects but plays no sound",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-004",
+      "jaccard_body": 0.17391304347826086,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "dock only charges my laptop with one specific cable": {
+      "query": "dock only charges my laptop with one specific cable",
+      "category": "peripherals",
+      "split": "test",
+      "target_doc": "kb-per-005",
+      "jaccard_body": 0.24,
+      "coverage_body": 0.8571428571428571,
+      "coverage_title": 0.8571428571428571
+    },
+    "wireless keyboard and mouse both drop out together": {
+      "query": "wireless keyboard and mouse both drop out together",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-006",
+      "jaccard_body": 0.2,
+      "coverage_body": 0.8571428571428571,
+      "coverage_title": 0.5714285714285714
+    },
+    "label printer is printing at the wrong size": {
+      "query": "label printer is printing at the wrong size",
+      "category": "peripherals",
+      "split": "val",
+      "target_doc": "kb-per-007",
+      "jaccard_body": 0.18181818181818182,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    },
+    "headset mic works in one app but not another": {
+      "query": "headset mic works in one app but not another",
+      "category": "peripherals",
+      "split": "test",
+      "target_doc": "kb-per-008",
+      "jaccard_body": 0.21739130434782608,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "double sided printing jams every single time": {
+      "query": "double sided printing jams every single time",
+      "category": "peripherals",
+      "split": "val",
+      "target_doc": "kb-per-009",
+      "jaccard_body": 0.14814814814814814,
+      "coverage_body": 0.5714285714285714,
+      "coverage_title": 0.5714285714285714
+    },
+    "external drive is much slower through the dock": {
+      "query": "external drive is much slower through the dock",
+      "category": "peripherals",
+      "split": "test",
+      "target_doc": "kb-per-010",
+      "jaccard_body": 0.18518518518518517,
+      "coverage_body": 0.8333333333333334,
+      "coverage_title": 0.8333333333333334
+    },
+    "both monitors flicker only when they're both plugged into the dock": {
+      "query": "both monitors flicker only when they're both plugged into the dock",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-011",
+      "jaccard_body": 0.18181818181818182,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "new network printer isn't showing up on any computer": {
+      "query": "new network printer isn't showing up on any computer",
+      "category": "peripherals",
+      "split": "val",
+      "target_doc": "kb-per-012",
+      "jaccard_body": 0.18518518518518517,
+      "coverage_body": 0.625,
+      "coverage_title": 0.625
+    },
+    "scan to network folder crashes the scanner software": {
+      "query": "scan to network folder crashes the scanner software",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-013",
+      "jaccard_body": 0.2608695652173913,
+      "coverage_body": 1.0,
+      "coverage_title": 0.8333333333333334
+    },
+    "dock's screens work but the usb ports are dead": {
+      "query": "dock's screens work but the usb ports are dead",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-014",
+      "jaccard_body": 0.15384615384615385,
+      "coverage_body": 0.6666666666666666,
+      "coverage_title": 0.6666666666666666
+    },
+    "wireless clicker skips slides randomly": {
+      "query": "wireless clicker skips slides randomly",
+      "category": "peripherals",
+      "split": "dev",
+      "target_doc": "kb-per-015",
+      "jaccard_body": 0.14285714285714285,
+      "coverage_body": 0.8,
+      "coverage_title": 0.8
+    }
+  }
+}
