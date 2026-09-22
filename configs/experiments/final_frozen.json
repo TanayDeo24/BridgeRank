@@ -1,0 +1,24 @@
+{
+  "id": "final_frozen",
+  "description": "Frozen post-optimization configuration, selected on VALIDATION only. See docs/BENCHMARK_REPORT.md Section 13 for the full procedure.",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "rerank_depth": 0,
+  "top_k": 5,
+  "retrieval_features": {
+    "bm25": 0.30000000000000004,
+    "dense": 0.7
+  },
+  "fusion": "weighted_sum",
+  "normalization": "minmax",
+  "reranker_model": null,
+  "rerank_weights": {
+    "retrieval_score": 0.0,
+    "cross_encoder": 1.0
+  },
+  "learned_model_path": null,
+  "seed": 42,
+  "split": "test",
+  "git_commit": ""
+}
