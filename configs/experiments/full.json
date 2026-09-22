@@ -1,0 +1,25 @@
+{
+  "id": "full",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "All retrieval-stage features (bm25, dense, title_overlap, freshness, source_authority) via weighted_sum, plus cross-encoder reranking. Starting point before validation-only optimization.",
+  "retrieval_features": {
+    "bm25": 0.35,
+    "dense": 0.45,
+    "title_overlap": 0.1,
+    "freshness": 0.05,
+    "source_authority": 0.05
+  },
+  "fusion": "weighted_sum",
+  "rerank_depth": 20,
+  "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "rerank_weights": {
+    "retrieval_score": 0.0,
+    "cross_encoder": 1.0
+  }
+}

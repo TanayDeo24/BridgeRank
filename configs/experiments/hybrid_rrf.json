@@ -1,0 +1,16 @@
+{
+  "id": "hybrid_rrf",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "Same two retrieval signals, fused by reciprocal rank fusion instead of normalized weighted sum (Gate 4 alternative).",
+  "retrieval_features": {
+    "bm25": 1.0,
+    "dense": 1.0
+  },
+  "fusion": "reciprocal_rank_fusion"
+}

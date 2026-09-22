@@ -1,0 +1,1485 @@
+{
+  "config": {
+    "id": "bm25_only",
+    "description": "Lexical-only baseline: BM25 score, weighted_sum with weight 1.0.",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "index_type": "flat",
+    "candidate_k": 50,
+    "rerank_depth": 0,
+    "top_k": 5,
+    "retrieval_features": {
+      "bm25": 1.0,
+      "dense": 0.0
+    },
+    "fusion": "weighted_sum",
+    "normalization": "minmax",
+    "reranker_model": null,
+    "rerank_weights": {
+      "retrieval_score": 0.0,
+      "cross_encoder": 1.0
+    },
+    "learned_model_path": null,
+    "seed": 42,
+    "split": "dev",
+    "git_commit": "606662a7e0920d7c66063a5177b59678bf5461d3"
+  },
+  "summary": {
+    "precision_at_k": 0.18888888888888888,
+    "recall_at_k": 0.9277777777777778,
+    "mrr": 0.860925925925926,
+    "ndcg_at_k": 0.8799296640647297,
+    "failed_query_rate": 0.05555555555555555,
+    "error_rate": 0.0,
+    "query_count": 90,
+    "p50_latency_ms": 5.736832972615957,
+    "p95_latency_ms": 7.241624989546835,
+    "p50_retrieval_ms": 5.5599999614059925,
+    "p95_retrieval_ms": 7.068499980960041,
+    "p50_feature_fusion_ms": 0.1740420120768249,
+    "p95_feature_fusion_ms": 0.19687501480802894,
+    "p50_rerank_ms": 0.0,
+    "p95_rerank_ms": 0.0
+  },
+  "rows": [
+    {
+      "query": "connected to vpn but can't reach shared drives",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_k": 0.45865970635647857,
+      "failed": false,
+      "retrieved": [
+        "kb-net-014",
+        "kb-per-010",
+        "kb-net-004",
+        "kb-net-009",
+        "kb-net-006"
+      ]
+    },
+    {
+      "query": "intranet portal hangs but google works fine",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 1.0,
+      "ndcg_at_k": 0.9173194127129571,
+      "failed": false,
+      "retrieved": [
+        "kb-net-006",
+        "kb-net-012",
+        "kb-per-008",
+        "kb-acc-014",
+        "kb-col-009"
+      ]
+    },
+    {
+      "query": "brand new internal app gets blocked by security software",
+      "category": "network",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-sof-015",
+        "kb-net-003",
+        "kb-mob-007",
+        "kb-sec-006",
+        "kb-mob-011"
+      ]
+    },
+    {
+      "query": "nothing loads through the office proxy",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-net-015",
+        "kb-net-008",
+        "kb-sof-005",
+        "kb-mes-005",
+        "kb-net-009"
+      ]
+    },
+    {
+      "query": "internet feels way slower than what we pay for",
+      "category": "network",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-per-010",
+        "kb-sto-003",
+        "kb-sof-006",
+        "kb-sec-002",
+        "kb-sec-011"
+      ]
+    },
+    {
+      "query": "calls stutter but downloads are fast",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 0.5,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_k": 0.45865970635647857,
+      "failed": false,
+      "retrieved": [
+        "kb-per-014",
+        "kb-net-004",
+        "kb-net-011",
+        "kb-col-001",
+        "kb-har-009"
+      ]
+    },
+    {
+      "query": "guest network shows up but never actually connects",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-012",
+        "kb-per-004",
+        "kb-net-009",
+        "kb-sof-011",
+        "kb-net-004"
+      ]
+    },
+    {
+      "query": "vpn drops every single time I close the lid",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-013",
+        "kb-per-009",
+        "kb-mob-006",
+        "kb-mob-008",
+        "kb-sto-010"
+      ]
+    },
+    {
+      "query": "remote workers get routed to a dead proxy",
+      "category": "network",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-net-015",
+        "kb-net-008",
+        "kb-per-014",
+        "kb-har-012",
+        "kb-acc-006"
+      ]
+    },
+    {
+      "query": "locked out after too many wrong password tries",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-003",
+        "kb-sec-013",
+        "kb-mes-012",
+        "kb-mob-002",
+        "kb-har-015"
+      ]
+    },
+    {
+      "query": "sso login just shows a blank screen",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-004",
+        "kb-col-002",
+        "kb-har-014",
+        "kb-har-015",
+        "kb-per-003"
+      ]
+    },
+    {
+      "query": "profile photo won't change no matter what",
+      "category": "account",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-sto-003",
+        "kb-mob-007",
+        "kb-sof-011",
+        "kb-mob-005",
+        "kb-mes-012"
+      ]
+    },
+    {
+      "query": "system won't let me reuse an old password",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-008",
+        "kb-acc-001",
+        "kb-sec-009",
+        "kb-sec-005",
+        "kb-sec-008"
+      ]
+    },
+    {
+      "query": "lost access to a shared inbox for no reason",
+      "category": "account",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-sto-012",
+        "kb-net-009",
+        "kb-acc-005",
+        "kb-sto-007",
+        "kb-mob-005"
+      ]
+    },
+    {
+      "query": "fingerprint login broke after updating the OS",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-011",
+        "kb-acc-004",
+        "kb-sof-010",
+        "kb-mob-006",
+        "kb-mob-003"
+      ]
+    },
+    {
+      "query": "can't remember answers to my security questions anymore",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-012",
+        "kb-sof-015",
+        "kb-sec-001",
+        "kb-sec-006",
+        "kb-acc-005"
+      ]
+    },
+    {
+      "query": "kiosk computer logs me out constantly",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-013",
+        "kb-mob-008",
+        "kb-har-011",
+        "kb-per-012",
+        "kb-sof-001"
+      ]
+    },
+    {
+      "query": "federated login fails only on the phone app",
+      "category": "account",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-014",
+        "kb-mob-006",
+        "kb-mob-008",
+        "kb-mob-002",
+        "kb-mob-007"
+      ]
+    },
+    {
+      "query": "laptop battery dies way faster than before",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-001",
+        "kb-mob-009",
+        "kb-sto-005",
+        "kb-har-011",
+        "kb-har-014"
+      ]
+    },
+    {
+      "query": "laptop is completely dead, won't power on",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_k": 0.5,
+      "failed": false,
+      "retrieved": [
+        "kb-per-014",
+        "kb-per-005",
+        "kb-har-002",
+        "kb-net-013",
+        "kb-col-008"
+      ]
+    },
+    {
+      "query": "printouts look streaky and faded",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-004",
+        "kb-sto-009",
+        "kb-sto-006",
+        "kb-mes-001",
+        "kb-har-003"
+      ]
+    },
+    {
+      "query": "monitor flickers at certain refresh rates",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-006",
+        "kb-per-011",
+        "kb-har-005",
+        "kb-mob-004",
+        "kb-sof-014"
+      ]
+    },
+    {
+      "query": "dock randomly drops every connected device",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-008",
+        "kb-per-010",
+        "kb-per-011",
+        "kb-net-001",
+        "kb-mob-003"
+      ]
+    },
+    {
+      "query": "webcam looks really dark on video calls",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-009",
+        "kb-net-011",
+        "kb-col-001",
+        "kb-per-014",
+        "kb-sec-010"
+      ]
+    },
+    {
+      "query": "external drive doesn't show up on the computer",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-per-010",
+        "kb-har-010",
+        "kb-per-012",
+        "kb-col-003",
+        "kb-col-012"
+      ]
+    },
+    {
+      "query": "second monitor stuck at a low resolution",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-012",
+        "kb-per-011",
+        "kb-mob-003",
+        "kb-mob-009",
+        "kb-har-006"
+      ]
+    },
+    {
+      "query": "usb-c charging is painfully slow",
+      "category": "hardware",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-har-015",
+        "kb-per-005",
+        "kb-har-005",
+        "kb-per-003",
+        "kb-sof-015"
+      ]
+    },
+    {
+      "query": "app crashes the second it opens",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.25,
+      "ndcg_at_k": 0.43067655807339306,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-001",
+        "kb-har-012",
+        "kb-sof-004",
+        "kb-sof-001",
+        "kb-sof-009"
+      ]
+    },
+    {
+      "query": "update gets stuck partway through install",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-002",
+        "kb-mob-003",
+        "kb-mob-007",
+        "kb-net-015",
+        "kb-net-013"
+      ]
+    },
+    {
+      "query": "app forgot how to open its own file type",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-004",
+        "kb-per-008",
+        "kb-net-008",
+        "kb-acc-001",
+        "kb-sto-007"
+      ]
+    },
+    {
+      "query": "software works for me but not my coworker on the same pc",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-col-009",
+        "kb-sof-006",
+        "kb-acc-014",
+        "kb-per-008",
+        "kb-har-012"
+      ]
+    },
+    {
+      "query": "program locks up only on really big files",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-008",
+        "kb-mes-014",
+        "kb-sto-013",
+        "kb-sof-007",
+        "kb-sof-001"
+      ]
+    },
+    {
+      "query": "app settings look totally garbled now",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2,
+      "ndcg_at_k": 0.38685280723454163,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-002",
+        "kb-sof-004",
+        "kb-sto-009",
+        "kb-sto-006",
+        "kb-sof-011"
+      ]
+    },
+    {
+      "query": "license portal shows fewer seats than we bought",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-012",
+        "kb-sof-003",
+        "kb-mob-013",
+        "kb-acc-006",
+        "kb-net-012"
+      ]
+    },
+    {
+      "query": "browser keeps nagging to save a password I already saved",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-013",
+        "kb-sec-009",
+        "kb-acc-001",
+        "kb-col-006",
+        "kb-sof-008"
+      ]
+    },
+    {
+      "query": "app gets slower the longer it stays open",
+      "category": "software",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sof-014",
+        "kb-sof-004",
+        "kb-per-010",
+        "kb-mob-001",
+        "kb-net-013"
+      ]
+    },
+    {
+      "query": "need to revert a shared doc to before someone's edit",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-001",
+        "kb-sto-007",
+        "kb-sto-012",
+        "kb-col-014",
+        "kb-sof-011"
+      ]
+    },
+    {
+      "query": "cloud storage is full and uploads are failing",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-010",
+        "kb-sto-002",
+        "kb-col-004",
+        "kb-per-005",
+        "kb-per-015"
+      ]
+    },
+    {
+      "query": "shared folder permissions aren't matching what I set",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-003",
+        "kb-per-013",
+        "kb-sto-007",
+        "kb-col-005",
+        "kb-sof-008"
+      ]
+    },
+    {
+      "query": "file has been stuck syncing forever",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-006",
+        "kb-sec-009",
+        "kb-har-011",
+        "kb-mes-013",
+        "kb-net-009"
+      ]
+    },
+    {
+      "query": "teammate can't open a file I shared with them",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-007",
+        "kb-sof-004",
+        "kb-sto-001",
+        "kb-sto-006",
+        "kb-acc-013"
+      ]
+    },
+    {
+      "query": "a file is gone from the trash",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-008",
+        "kb-sto-011",
+        "kb-sto-014",
+        "kb-acc-007",
+        "kb-sto-010"
+      ]
+    },
+    {
+      "query": "lost access to a team drive after the owner left",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-012",
+        "kb-sec-006",
+        "kb-col-015",
+        "kb-per-010",
+        "kb-sec-003"
+      ]
+    },
+    {
+      "query": "offline edits never synced back up",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-013",
+        "kb-mob-012",
+        "kb-per-002",
+        "kb-sto-001",
+        "kb-col-004"
+      ]
+    },
+    {
+      "query": "can't delete a file because of a legal hold",
+      "category": "storage",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sto-014",
+        "kb-acc-008",
+        "kb-har-002",
+        "kb-sof-004",
+        "kb-sof-011"
+      ]
+    },
+    {
+      "query": "everyone hears an echo of themselves on the call",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-001",
+        "kb-acc-012",
+        "kb-net-011",
+        "kb-col-009",
+        "kb-sto-012"
+      ]
+    },
+    {
+      "query": "screen share just shows a black window",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-002",
+        "kb-col-013",
+        "kb-col-012",
+        "kb-har-014",
+        "kb-har-015"
+      ]
+    },
+    {
+      "query": "calendar invite never reaches people outside the company",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-003",
+        "kb-mes-008",
+        "kb-mob-011",
+        "kb-mes-004",
+        "kb-acc-007"
+      ]
+    },
+    {
+      "query": "meeting recording isn't showing up anywhere",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-004",
+        "kb-col-006",
+        "kb-acc-006",
+        "kb-sof-011",
+        "kb-col-003"
+      ]
+    },
+    {
+      "query": "chat notifications quit showing up on my desktop",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-005",
+        "kb-mob-002",
+        "kb-col-012",
+        "kb-acc-014",
+        "kb-col-011"
+      ]
+    },
+    {
+      "query": "some people on the call have no audio, others are fine",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-009",
+        "kb-per-004",
+        "kb-net-011",
+        "kb-acc-010",
+        "kb-col-001"
+      ]
+    },
+    {
+      "query": "meeting link works on desktop but not on my phone",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-011",
+        "kb-acc-014",
+        "kb-col-009",
+        "kb-mob-002",
+        "kb-mob-005"
+      ]
+    },
+    {
+      "query": "poll answers are visible to everyone, should be host only",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-014",
+        "kb-mob-004",
+        "kb-sec-012",
+        "kb-mes-010",
+        "kb-acc-012"
+      ]
+    },
+    {
+      "query": "one occurrence of a recurring meeting vanished",
+      "category": "collaboration",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-col-015",
+        "kb-col-010",
+        "kb-mob-015",
+        "kb-col-009",
+        "kb-col-001"
+      ]
+    },
+    {
+      "query": "real emails keep landing in spam",
+      "category": "messaging",
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0,
+      "mrr": 0.0,
+      "ndcg_at_k": 0.0,
+      "failed": true,
+      "retrieved": [
+        "kb-mes-006",
+        "kb-mes-001",
+        "kb-sto-005",
+        "kb-per-004",
+        "kb-per-014"
+      ]
+    },
+    {
+      "query": "distribution list email doesn't reach everyone",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-003",
+        "kb-mes-002",
+        "kb-net-014",
+        "kb-acc-009",
+        "kb-sec-005"
+      ]
+    },
+    {
+      "query": "out of office reply doesn't fire for coworkers",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-005",
+        "kb-net-006",
+        "kb-har-009",
+        "kb-acc-013",
+        "kb-net-015"
+      ]
+    },
+    {
+      "query": "email search only checks the folder I'm in",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-009",
+        "kb-sof-011",
+        "kb-mes-014",
+        "kb-sto-009",
+        "kb-sto-003"
+      ]
+    },
+    {
+      "query": "read receipts never come back even though it's turned on",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-010",
+        "kb-per-002",
+        "kb-mob-012",
+        "kb-col-011",
+        "kb-sec-010"
+      ]
+    },
+    {
+      "query": "sent mail from a shared inbox lands in my personal mailbox",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-011",
+        "kb-mes-009",
+        "kb-mes-012",
+        "kb-sec-011",
+        "kb-acc-009"
+      ]
+    },
+    {
+      "query": "mailbox rules quit running after I changed my password",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-012",
+        "kb-mes-001",
+        "kb-sof-013",
+        "kb-per-002",
+        "kb-sto-013"
+      ]
+    },
+    {
+      "query": "new employee's signature doesn't match the template",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-013",
+        "kb-mob-007",
+        "kb-sec-008",
+        "kb-sec-013",
+        "kb-sto-003"
+      ]
+    },
+    {
+      "query": "vacation reply sends the same person multiple replies",
+      "category": "messaging",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mes-015",
+        "kb-mes-005",
+        "kb-per-011",
+        "kb-mes-008",
+        "kb-mob-003"
+      ]
+    },
+    {
+      "query": "internal site is blocked by an expired certificate warning",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-003",
+        "kb-sof-015",
+        "kb-mob-007",
+        "kb-net-012",
+        "kb-mes-005"
+      ]
+    },
+    {
+      "query": "laptop failed a compliance check and lost access",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-004",
+        "kb-sto-012",
+        "kb-mob-010",
+        "kb-mes-002",
+        "kb-sof-005"
+      ]
+    },
+    {
+      "query": "usb drive won't work on my work laptop",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-006",
+        "kb-per-014",
+        "kb-col-008",
+        "kb-mob-005",
+        "kb-mob-002"
+      ]
+    },
+    {
+      "query": "vpn client throws a certificate trust error since the update",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-007",
+        "kb-mob-007",
+        "kb-sec-011",
+        "kb-acc-004",
+        "kb-net-003"
+      ]
+    },
+    {
+      "query": "got an mfa prompt I never triggered",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-009",
+        "kb-mob-010",
+        "kb-acc-012",
+        "kb-sof-002",
+        "kb-acc-007"
+      ]
+    },
+    {
+      "query": "personal firewall is blocking the company vpn",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-011",
+        "kb-net-007",
+        "kb-mob-005",
+        "kb-mes-011",
+        "kb-sto-012"
+      ]
+    },
+    {
+      "query": "dlp policy is blocking a file transfer that should be fine",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-012",
+        "kb-sof-004",
+        "kb-sto-014",
+        "kb-net-011",
+        "kb-mes-015"
+      ]
+    },
+    {
+      "query": "password manager won't autofill on one particular site",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-sec-013",
+        "kb-col-009",
+        "kb-acc-010",
+        "kb-sof-013",
+        "kb-acc-001"
+      ]
+    },
+    {
+      "query": "account recovery keeps asking for info I don't have anymore",
+      "category": "security",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg_at_k": 0.5,
+      "failed": false,
+      "retrieved": [
+        "kb-acc-012",
+        "kb-acc-001",
+        "kb-sec-015",
+        "kb-acc-003",
+        "kb-acc-007"
+      ]
+    },
+    {
+      "query": "work app crashes every time I open it since the update",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-001",
+        "kb-mob-006",
+        "kb-sof-004",
+        "kb-mob-008",
+        "kb-sof-014"
+      ]
+    },
+    {
+      "query": "stopped getting push notifications on my phone",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-002",
+        "kb-col-005",
+        "kb-mob-012",
+        "kb-mob-005",
+        "kb-mob-006"
+      ]
+    },
+    {
+      "query": "work profile won't let me use the camera",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-005",
+        "kb-mob-007",
+        "kb-har-009",
+        "kb-sof-011",
+        "kb-sec-001"
+      ]
+    },
+    {
+      "query": "internal app install fails with a signature error",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-007",
+        "kb-mob-011",
+        "kb-sof-002",
+        "kb-net-005",
+        "kb-mes-013"
+      ]
+    },
+    {
+      "query": "phone app logs me out every time it restarts",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-008",
+        "kb-mob-006",
+        "kb-acc-013",
+        "kb-mob-001",
+        "kb-mob-009"
+      ]
+    },
+    {
+      "query": "my managed phone got wiped out of nowhere",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.2,
+      "ndcg_at_k": 0.38685280723454163,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-005",
+        "kb-mob-008",
+        "kb-har-009",
+        "kb-net-006",
+        "kb-mob-010"
+      ]
+    },
+    {
+      "query": "never get the two factor approval push on my phone",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-012",
+        "kb-mob-002",
+        "kb-acc-007",
+        "kb-mob-005",
+        "kb-sof-009"
+      ]
+    },
+    {
+      "query": "phone calendar shows meetings in the wrong timezone",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-013",
+        "kb-col-010",
+        "kb-mes-008",
+        "kb-col-003",
+        "kb-mob-009"
+      ]
+    },
+    {
+      "query": "email app won't sync big attachments on cellular",
+      "category": "mobile",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-mob-014",
+        "kb-mes-014",
+        "kb-mes-004",
+        "kb-sto-013",
+        "kb-mob-015"
+      ]
+    },
+    {
+      "query": "wireless mouse cursor keeps jumping around",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-001",
+        "kb-net-001",
+        "kb-per-006",
+        "kb-per-015",
+        "kb-net-002"
+      ]
+    },
+    {
+      "query": "network printer shows offline even though it's on",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-002",
+        "kb-per-012",
+        "kb-sto-013",
+        "kb-col-011",
+        "kb-net-014"
+      ]
+    },
+    {
+      "query": "double sided scans come out blank on the back",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 0.5,
+      "ndcg_at_k": 0.6309297535714575,
+      "failed": false,
+      "retrieved": [
+        "kb-net-010",
+        "kb-per-003",
+        "kb-har-013",
+        "kb-mob-012",
+        "kb-acc-013"
+      ]
+    },
+    {
+      "query": "bluetooth headset connects but plays no sound",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-004",
+        "kb-net-012",
+        "kb-per-008",
+        "kb-net-004",
+        "kb-net-009"
+      ]
+    },
+    {
+      "query": "wireless keyboard and mouse both drop out together",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-006",
+        "kb-per-001",
+        "kb-har-007",
+        "kb-per-015",
+        "kb-per-011"
+      ]
+    },
+    {
+      "query": "both monitors flicker only when they're both plugged into the dock",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-011",
+        "kb-per-006",
+        "kb-har-015",
+        "kb-per-005",
+        "kb-sof-009"
+      ]
+    },
+    {
+      "query": "scan to network folder crashes the scanner software",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-013",
+        "kb-per-003",
+        "kb-sof-011",
+        "kb-mes-009",
+        "kb-sof-009"
+      ]
+    },
+    {
+      "query": "dock's screens work but the usb ports are dead",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-014",
+        "kb-per-010",
+        "kb-per-011",
+        "kb-sec-006",
+        "kb-net-015"
+      ]
+    },
+    {
+      "query": "wireless clicker skips slides randomly",
+      "category": "peripherals",
+      "precision_at_k": 0.2,
+      "recall_at_k": 1.0,
+      "mrr": 1.0,
+      "ndcg_at_k": 1.0,
+      "failed": false,
+      "retrieved": [
+        "kb-per-015",
+        "kb-per-001",
+        "kb-per-006",
+        "kb-net-001",
+        "kb-net-002"
+      ]
+    }
+  ]
+}

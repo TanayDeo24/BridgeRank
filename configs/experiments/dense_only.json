@@ -1,0 +1,16 @@
+{
+  "id": "dense_only",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "Semantic-only baseline: real Sentence-Transformers dense similarity.",
+  "retrieval_features": {
+    "bm25": 0.0,
+    "dense": 1.0
+  },
+  "fusion": "weighted_sum"
+}

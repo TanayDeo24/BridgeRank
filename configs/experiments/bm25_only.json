@@ -1,0 +1,16 @@
+{
+  "id": "bm25_only",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "Lexical-only baseline: BM25 score, weighted_sum with weight 1.0.",
+  "retrieval_features": {
+    "bm25": 1.0,
+    "dense": 0.0
+  },
+  "fusion": "weighted_sum"
+}

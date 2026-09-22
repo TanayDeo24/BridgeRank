@@ -1,0 +1,16 @@
+[
+  "configs/experiments/bm25_only.json",
+  "configs/experiments/cross_encoder_rerank.json",
+  "configs/experiments/dense_only.json",
+  "configs/experiments/full.json",
+  "configs/experiments/full_minus_cross_encoder.json",
+  "configs/experiments/full_minus_dense.json",
+  "configs/experiments/full_minus_freshness.json",
+  "configs/experiments/full_minus_lexical.json",
+  "configs/experiments/full_minus_source_authority.json",
+  "configs/experiments/full_minus_title_overlap.json",
+  "configs/experiments/hashing_dense_only_ci.json",
+  "configs/experiments/hybrid_learned.json",
+  "configs/experiments/hybrid_rrf.json",
+  "configs/experiments/hybrid_weighted.json"
+]

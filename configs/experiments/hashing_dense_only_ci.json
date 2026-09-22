@@ -1,0 +1,16 @@
+{
+  "id": "hashing_dense_only_ci",
+  "embedding_model": "hashing",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "CI/demo-only baseline using the deterministic hashing embedder (no network, no model download) \u2014 NOT used for any headline claim, kept for fast reproducibility checks matching the original repository's default profile.",
+  "retrieval_features": {
+    "bm25": 0.0,
+    "dense": 1.0
+  },
+  "fusion": "weighted_sum"
+}

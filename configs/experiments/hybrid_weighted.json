@@ -1,0 +1,16 @@
+{
+  "id": "hybrid_weighted",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "Original repository's fusion strategy, generalized: min-max normalized weighted sum of BM25 + real dense similarity, alpha=0.55 (dense weight), matching the original hardcoded default before any tuning.",
+  "retrieval_features": {
+    "bm25": 0.45,
+    "dense": 0.55
+  },
+  "fusion": "weighted_sum"
+}

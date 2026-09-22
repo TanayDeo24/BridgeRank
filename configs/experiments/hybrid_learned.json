@@ -1,0 +1,20 @@
+{
+  "id": "hybrid_learned",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "index_type": "flat",
+  "candidate_k": 50,
+  "top_k": 5,
+  "normalization": "minmax",
+  "split": "test",
+  "git_commit": "",
+  "description": "Weighted sum whose weights come from ranking_model.fit_logistic_rank_model trained on the DEV split (machine-learned linear ranking model).",
+  "retrieval_features": {
+    "bm25": 1.0,
+    "dense": 1.0,
+    "title_overlap": 1.0,
+    "freshness": 1.0,
+    "source_authority": 1.0
+  },
+  "fusion": "learned_linear",
+  "learned_model_path": "/Users/tanaydeo/Documents/hybrid-support-search-main/artifacts/models/learned_linear_v1.json"
+}
