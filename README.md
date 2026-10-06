@@ -1,5 +1,7 @@
 # Hybrid Retrieval and Ranking System
 
+**Author: [Tanay Deo](https://github.com/tanaydeo)**
+
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Production_API-009688?logo=fastapi&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-Embeddings-EE4C2C?logo=pytorch&logoColor=white)
@@ -214,7 +216,7 @@ The detailed design and lifecycle decisions are documented in
 ### Local development
 
 ```bash
-git clone https://github.com/rahul9908/hybrid-support-search.git
+git clone https://github.com/tanaydeo/hybrid-support-search.git
 cd hybrid-support-search
 
 python -m venv .venv

@@ -4,7 +4,7 @@ Recorded before any modification, per the mandatory pre-work safety check.
 
 ## Repository provenance
 
-- **Source:** https://github.com/rahul9908/hybrid-support-search
+- **Source:** https://github.com/tanaydeo/hybrid-support-search
 - **Acquisition method:** the working directory was `hybrid-support-search-main`, the exact
   naming pattern GitHub produces for a "Download ZIP" of the `main` branch — **not** a `git clone`.
   `git status` at task start returned `fatal: not a git repository`. There was no `.git` directory
@@ -13,7 +13,7 @@ Recorded before any modification, per the mandatory pre-work safety check.
   as received, before any other change. This commit is the baseline for every diff going forward.
   No history was rewritten because none existed; nothing was overwritten or discarded.
 - **Branch:** `main` (newly created by `git init`; not pushed anywhere).
-- **Baseline commit:** `93ed1b8` — "Initial import: snapshot of rahul9908/hybrid-support-search
+- **Baseline commit:** `93ed1b8` — "Initial import: snapshot of tanaydeo/hybrid-support-search
   (main, downloaded as zip, no prior git history)"
 - **Uncommitted user changes at start:** none (nothing existed to be uncommitted; the entire tree
   was untracked until the baseline commit above).

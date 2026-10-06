@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "support-search"
 version = "0.1.0"
 description = "End-to-end hybrid retrieval and reranking service"
+authors = [{name = "Tanay Deo", email = "tanaydeo2403@gmail.com"}]
 requires-python = ">=3.10"
 dependencies = [
   "fastapi>=0.115,<1",
